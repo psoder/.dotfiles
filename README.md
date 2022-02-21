@@ -5,7 +5,7 @@ ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/.bashrc ~/.bashrc
 
 # SSH
-ln -s ~/.dotfiles/.bashrc ~/.ssh/config
+ln -s ~/.dotfiles/config ~/.ssh/config
 
 # Git
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
