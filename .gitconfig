@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[core]
+	editor = nano
+
+[user]
+	name = Pontus
+	email = 52171526+psoder@users.noreply.github.com
+
+[help]
+	autocorrect = 25
