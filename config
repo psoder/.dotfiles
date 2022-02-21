@@ -1,0 +1,13 @@
+# SSH configuration for multiple keys
+
+#kth
+Host gits-15.sys.kth.se
+	HostName gits-15.sys.kth.se
+	User git
+	IdentityFile ~/.ssh/id_ed25519_kth
+
+#personal
+Host github.com
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_personal
