@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Docker engine
 # Remove old installation
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
@@ -20,3 +21,12 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo docker run hello-world
+
+
+# Docker compose
+mkdir -p ~/.docker/cli-plugins/
+curl -SL https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+
+chmod +x ~/.docker/cli-plugins/docker-compose
+
+docker compose version
