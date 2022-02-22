@@ -10,23 +10,3 @@ rm -f packages.microsoft.gpg
 sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
-
-# Install extensions
-extensions=(
-  CoenraadS.bracket-pair-colorizer
-  DavidAnson.vscode-markdownlint
-  dbaeumer.vscode-eslint
-  dsznajder.es7-react-js-snippets
-  ecmel.vscode-html-css
-  esbenp.prettier-vscode
-  formulahendry.auto-close-tag
-  formulahendry.auto-rename-tag
-  ms-azuretools.vscode-docker
-  oderwat.indent-rainbow
-  redhat.vscode-yaml
-  VisualStudioExptTeam.vscodeintellicode
-)
-
-for i in ${extensions[@]}; do
-  code --install-extension $i
-done
