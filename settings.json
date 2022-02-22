@@ -1,0 +1,14 @@
+// VS Code settings
+
+{
+    "window.zoomLevel": 1,
+    "telemetry.telemetryLevel": "off",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnPaste": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "explorer.sortOrder": "type",
+    "editor.cursorBlinking": "smooth",
+    "files.trimFinalNewlines": true
+}
