@@ -3,6 +3,8 @@ alias ali="code -n ~/.bash_aliases"
 alias upg="sudo apt update && sudo apt upgrade -y"
 alias kth="cd /mnt/e/kth"
 alias home="cd /mnt/c/Users/Pontus"
+alias slp="systemctl suspend"
+alias eurkey="setxkbmap eu"
 
 # Global variables
 bold=$(tput bold)       # bold text
