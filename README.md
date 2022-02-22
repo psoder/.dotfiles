@@ -50,6 +50,7 @@ sudo apt-get install konsonsole
 
 # VS Code
 ./apps/vscode.sh
+./apps/vscode-extensions.sh
 
 # Node.js npm 
 sudo apt-get install nodejs npm

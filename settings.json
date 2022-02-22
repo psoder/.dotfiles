@@ -1,14 +1,26 @@
 // VS Code settings
 
 {
-    "window.zoomLevel": 1,
-    "telemetry.telemetryLevel": "off",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.formatOnPaste": true,
-    "workbench.editor.highlightModifiedTabs": true,
-    "explorer.sortOrder": "type",
-    "editor.cursorBlinking": "smooth",
-    "files.trimFinalNewlines": true
+  "editor.bracketPairColorization.enabled": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.formatOnPaste": true,
+  "editor.suggestSelection": "first",
+  "explorer.sortOrder": "type",
+  "files.trimFinalNewlines": true,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "telemetry.telemetryLevel": "off",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": 1,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editorAssociations": {
+    "*.dat": "default"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
