@@ -1,5 +1,20 @@
-# 1. Create symlinks
+# .dotfiles
+
+## 1. Clone repo
+
+```bash
+# Using SSH
+git clone git@github.com:psoder/.dotfiles.git
 ```
+
+```bash
+# Using HTTPS
+git clone https://github.com/psoder/.dotfiles.git
+```
+
+## 2. Create symlinks
+
+```bash
 # Bash
 ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/.bashrc ~/.bashrc
@@ -9,4 +24,43 @@ ln -s ~/.dotfiles/config ~/.ssh/config
 
 # Git
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+
+# VS Code
+ln -s ~/.dotfiles/settings.json ~/.config/Code/User/settings.json
+```
+
+## 3. Install Apps
+
+```bash
+# Snap
+sudo apt-get install snapd
+
+# Discord
+snap install discord
+
+# Steam
+sudo apt-get install steam
+
+# Slack
+snap install slack
+
+# Konsole
+sudo apt-get install konsonsole
+
+# Docker
+./apps/docker
+
+# VS Code
+./apps/vscode
+
+# Node.js npm 
+sudo apt-get install nodejs npm
+
+# n
+npm install -g n
+
+# yarn
+corepack enable
+
+
 ```
