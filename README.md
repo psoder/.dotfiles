@@ -48,10 +48,10 @@ snap install slack
 sudo apt-get install konsonsole
 
 # Docker
-./apps/docker
+./apps/docker.sh
 
 # VS Code
-./apps/vscode
+./apps/vscode.sh
 
 # Node.js npm 
 sudo apt-get install nodejs npm
