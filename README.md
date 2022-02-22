@@ -5,9 +5,7 @@
 ```bash
 # Using SSH
 git clone git@github.com:psoder/.dotfiles.git
-```
 
-```bash
 # Using HTTPS
 git clone https://github.com/psoder/.dotfiles.git
 ```
