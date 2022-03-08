@@ -19,9 +19,14 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
+  "files.associations": {
+    ".zshrc": "shellscript"
+  },
   "telemetry.telemetryLevel": "off",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.zoomLevel": 1,
+  "git.autofetch": true,
+  "git.confirmSync": false,
 
   // Workbench
   "workbench.editor.highlightModifiedTabs": true,
