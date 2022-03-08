@@ -21,3 +21,8 @@ alias .5='cd ../../../../..'
 
 # LSD
 alias ls='lsd'
+
+alias ali="code -n ~/.bash_aliases"
+alias upg="sudo apt update && sudo apt upgrade -y"
+alias slp="systemctl suspend"
+alias eurkey="setxkbmap eu"
