@@ -7,6 +7,10 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Global aliases
+alias -g xclipc='xclip -selection clipboard'
+alias -g dotl='~/.dotfiles'
+
 # Moving around
 alias ..='cd ..'
 alias ...='cd ../../'
@@ -30,10 +34,10 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
-
+alias xclipc='xclip -selection clipboard'
 
 # Shortcuts
-alias dot="code -n ~/.dotfiles"
+alias dot="code -n dotl"
 alias upg="sudo apt update && sudo apt upgrade -y"
 alias eu="setxkbmap eu"
 alias slp="systemctl suspend"
