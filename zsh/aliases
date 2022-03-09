@@ -7,8 +7,6 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias hs="history | grep"
-
 # Moving around
 alias ..='cd ..'
 alias ...='cd ../../'
@@ -19,10 +17,34 @@ alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
-# LSD
+# Rebrandings
 alias ls='lsd'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
-alias ali="code -n ~/.bash_aliases"
+# Utilities
+alias h="history"
+alias hs="history | grep"
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+
+
+# Shortcuts
+alias dot="code -n ~/.dotfiles"
 alias upg="sudo apt update && sudo apt upgrade -y"
+alias eu="setxkbmap eu"
 alias slp="systemctl suspend"
-alias eurkey="setxkbmap eu"
+
+# Git
+alias gs="git status"
+
+function glo() {
+    git log --oneline -$1
+}
+
+function gcam() {
+    git commit -am $1
+}
