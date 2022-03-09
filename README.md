@@ -56,6 +56,7 @@ sh
 sudo -s
 which zsh
 chsh -s /usr/bin/zsh
+sudo apt install autojump zsh-autosuggestions zsh-syntax-highlighting
 
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
