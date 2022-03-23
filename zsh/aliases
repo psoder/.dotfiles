@@ -41,6 +41,8 @@ alias dot="code -n dotl"
 alias upg="sudo apt update && sudo apt upgrade -y"
 alias eu="setxkbmap eu"
 alias slp="systemctl suspend"
+alias vsc='code -n .'
+alias audior='systemctl --user restart pulseaudio'
 
 # Git
 alias gs="git status"
@@ -51,4 +53,14 @@ function glo() {
 
 function gcam() {
     git commit -am $1
+}
+
+# Docker
+alias docku="docker compose up"
+alias dockd="docker compose down"
+alias dockrmrfcon="docker rm -f $(docker ps -aq)"
+alias dockrmrfimg="docker rmi -f $(docker images -aq)"
+
+function docksh() {
+    docker exec -it $1 /bin/bash
 }

@@ -25,7 +25,7 @@ ln -s ~/.dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 ln -s ~/.dotfiles/config ~/.ssh/config
 
 # Git
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 
 # VS Code
 ln -s ~/.dotfiles/settings.json ~/.config/Code/User/settings.json

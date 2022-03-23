@@ -1,6 +1,7 @@
 # This is Git's per-user configuration file.
 [core]
 	editor = nano
+	excludesfile = ~/.dotfiles/git/.gitignore
 
 [user]
 	name = Pontus
@@ -8,3 +9,5 @@
 
 [help]
 	autocorrect = 25
+[pull]
+	rebase = false
