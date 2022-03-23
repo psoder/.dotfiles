@@ -33,7 +33,7 @@
   "workbench.editorAssociations": {
     "*.dat": "default"
   },
-  "workbench.colorTheme": "Andromeda Italic",
+  "workbench.colorTheme": "Andromeda Bordered",
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#135564",
     "editor.selectionHighlightBackground": "#135564"
@@ -52,5 +52,9 @@
   "markdownlint.focusMode": false,
 
   // Prettier
-  "prettier.enable": true
+  "prettier.enable": true,
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "editor.linkedEditing": true
 }
