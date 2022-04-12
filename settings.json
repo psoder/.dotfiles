@@ -6,7 +6,7 @@
   "editor.guides.bracketPairs": "active",
   "editor.cursorBlinking": "smooth",
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.suggestSelection": "first",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -25,7 +25,6 @@
   },
   "telemetry.telemetryLevel": "off",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 1,
   "git.autofetch": true,
   "git.confirmSync": false,
 
@@ -57,5 +56,8 @@
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
-  "editor.linkedEditing": true
+  "[kotlin]": {
+    "editor.defaultFormatter": "fwcd.kotlin"
+  },
+  "window.zoomLevel": 1
 }
