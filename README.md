@@ -89,4 +89,8 @@ wget -P ~/.local/share/fonts https://github.com/romkatv/powerlevel10k-media/raw/
 
 # 2. Install Powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# SDKMAN
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
