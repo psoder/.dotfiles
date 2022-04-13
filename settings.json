@@ -6,7 +6,7 @@
   "editor.guides.bracketPairs": "active",
   "editor.cursorBlinking": "smooth",
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.suggestSelection": "first",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -53,5 +53,8 @@
 
   // Prettier
   "prettier.enable": true,
-  "workbench.colorTheme": "Andromeda Italic"
+  "workbench.colorTheme": "Andromeda Bordered",
+  "[kotlin]": {
+    "editor.defaultFormatter": "fwcd.kotlin"
+  }
 }
