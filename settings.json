@@ -8,7 +8,7 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
   "editor.suggestSelection": "first",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter"1: "esbenp.prettier-vscode",
   "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 
   // Eh
@@ -25,7 +25,6 @@
   },
   "telemetry.telemetryLevel": "off",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 1,
   "git.autofetch": true,
   "git.confirmSync": false,
 
@@ -34,6 +33,7 @@
   "workbench.editorAssociations": {
     "*.dat": "default"
   },
+  "workbench.colorTheme": "Andromeda Bordered",
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#135564",
     "editor.selectionHighlightBackground": "#135564"
@@ -53,8 +53,11 @@
 
   // Prettier
   "prettier.enable": true,
-  "workbench.colorTheme": "Andromeda Bordered",
   "[kotlin]": {
     "editor.defaultFormatter": "fwcd.kotlin"
-  }
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "window.zoomLevel": 1
 }
