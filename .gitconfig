@@ -8,3 +8,5 @@
 
 [help]
 	autocorrect = 25
+[init]
+	defaultBranch = main
