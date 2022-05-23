@@ -8,7 +8,7 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
   "editor.suggestSelection": "first",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter"1: "esbenp.prettier-vscode",
   "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 
   // Eh
@@ -53,11 +53,11 @@
 
   // Prettier
   "prettier.enable": true,
-  "[csharp]": {
-    "editor.defaultFormatter": "ms-dotnettools.csharp"
-  },
   "[kotlin]": {
     "editor.defaultFormatter": "fwcd.kotlin"
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
   "window.zoomLevel": 1
 }

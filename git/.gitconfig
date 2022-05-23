@@ -9,6 +9,10 @@
 
 [help]
 	autocorrect = 25
+
+[init]
+	defaultBranch = main
+
 [pull]
 	rebase = false
 [init]
