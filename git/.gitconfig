@@ -11,3 +11,5 @@
 	autocorrect = 25
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
