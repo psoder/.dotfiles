@@ -14,8 +14,8 @@ git clone https://github.com/psoder/.dotfiles.git
 
 ```bash
 # Bash
-ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
+ln -s ~/.dotfiles/bash/.bash_aliases ~/.bash_aliases
+ln -s ~/.dotfiles/bash/.bashrc ~/.bashrc
 
 # zsh
 ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
@@ -34,6 +34,9 @@ ln -s ~/.dotfiles/settings.json ~/.config/Code/User/settings.json
 ## 3. Install Apps
 
 ```bash
+# thefuck
+sudo apt-get install thefuck
+
 # Snap
 sudo apt-get install snapd
 
@@ -56,7 +59,7 @@ sh
 sudo -s
 which zsh
 chsh -s /usr/bin/zsh
-sudo apt install autojump zsh-autosuggestions zsh-syntax-highlighting
+sudo apt-get install autojump zsh-autosuggestions zsh-syntax-highlighting
 
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -68,17 +71,15 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ./apps/vscode.sh
 ./apps/vscode-extensions.sh
 
-# Node.js npm
-sudo apt-get install nodejs npm
 
-# n
+# n, npm and Node
+curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+bash n lts
+# Now node and npm are available
 npm install -g n
 
-# yarn
-corepack enable
-
 # LSD
-fippel
+# TODO
 
 # Powerlevel10k
 # 1. Install font
@@ -93,4 +94,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # SDKMAN
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+## Install SDK apps
+sdk install kotlinc
+sdk install ki
 ```

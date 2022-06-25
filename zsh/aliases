@@ -43,6 +43,7 @@ alias eu="setxkbmap eu"
 alias slp="systemctl suspend"
 alias vsc='code -n .'
 alias audior='systemctl --user restart pulseaudio'
+alias fuck='thefuck'
 
 # Git
 alias gs="git status"
