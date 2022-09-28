@@ -28,13 +28,32 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Utilities
-alias h="history"
-alias hs="history | grep"
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias xclipc='xclip -selection clipboard'
+
+function randomCow() {
+    cows=(
+        apt bud-frogs bunny cheese cock cower daemon default dragon
+        dragon-and-cow duck elephant elephant-in-snake flaming-sheep fox
+        hellokitty kangaroo koala luke-koala
+        mech-and-cow milk moofasa moose pony-smaller ren sheep skeleton
+        snowman stegosaurus stimpy suse three-eyes tux
+        unipony-smaller vader vader-koala www
+    )
+
+    cowsay -f $cows[$(( $RANDOM % ${#cows[@]} + 1))] $1
+}
+
+function yoloGitCow() {
+    message=$1
+    echo  ${message:-'YOLO'}
+    curl -s http://whatthecommit.com/index.txt | randomCow | print
+
+    echo $ret
+}
 
 # Shortcuts
 alias dot="code -n dotl"
@@ -43,10 +62,12 @@ alias eu="setxkbmap eu"
 alias slp="systemctl suspend"
 alias vsc='code -n .'
 alias audior='systemctl --user restart pulseaudio'
-alias fuck='thefuck'
+alias yarnoops='rm -rf node_modules yarn.lock'
+# alias fuck='thefuck'
 
 # Git
 alias gs="git status"
+alias yolo="git commit -m '$(curl -s http://whatthecommit.com/index.txt)'"
 
 function glo() {
     git log --oneline -$1
@@ -64,4 +85,14 @@ alias dockrmrfimg="docker rmi -f $(docker images -aq)"
 
 function docksh() {
     docker exec -it $1 /bin/bash
+}
+
+function cex () {
+    filename=$(basename -s .c $1)
+    gcc $@ -o $filename && ./$filename
+    if [ $? -eq 0 ]; then
+        rm ./$filename
+    else
+        return $?
+    fi
 }

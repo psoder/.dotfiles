@@ -11,4 +11,7 @@ plugins=(
     git
     z
     autojump
+    sudo
+    command-not-found
+    history
 )
