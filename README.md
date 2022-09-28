@@ -35,7 +35,7 @@ ln -s ~/.dotfiles/settings.json ~/.config/Code/User/settings.json
 
 ```bash
 # thefuck
-sudo apt-get install thefuck
+sudo apt install thefuck
 
 # Snap
 sudo apt-get install snapd

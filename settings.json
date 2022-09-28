@@ -1,67 +1,70 @@
 // VS Code settings
 
 {
-  // Editor
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "editor.cursorBlinking": "smooth",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": false,
-  "editor.suggestSelection": "first",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    // Editor
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.cursorBlinking": "smooth",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": false,
+    "editor.suggestSelection": "first",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 
-  // Eh
-  "explorer.sortOrder": "type",
-  "files.trimFinalNewlines": true,
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  "files.associations": {
-    ".zshrc": "shellscript"
-  },
-  "telemetry.telemetryLevel": "off",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "git.autofetch": true,
-  "git.confirmSync": false,
+    // Eh
+    "explorer.sortOrder": "type",
+    "files.trimFinalNewlines": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "files.associations": {
+        ".zshrc": "shellscript"
+    },
+    "telemetry.telemetryLevel": "off",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "git.autofetch": true,
+    "git.confirmSync": false,
 
-  // Workbench
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editorAssociations": {
-    "*.dat": "default"
-  },
-  "workbench.colorTheme": "Andromeda",
-  "workbench.colorCustomizations": {
-    "editor.selectionBackground": "#135564",
-    "editor.selectionHighlightBackground": "#135564"
-  },
+    // Workbench
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editorAssociations": {
+        "*.dat": "default"
+    },
+    "workbench.colorTheme": "Andromeda",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#135564",
+        "editor.selectionHighlightBackground": "#135564"
+    },
 
-  // Extensions
-  // Redhat
-  "redhat.telemetry.enabled": false,
+    // Extensions
+    // Redhat
+    "redhat.telemetry.enabled": false,
 
-  // Markdownlint
-  "markdownlint.config": {
-    "default": true,
-    "MD013": true,
-    "MD033": false
-  },
-  "markdownlint.focusMode": false,
+    // Markdownlint
+    "markdownlint.config": {
+        "default": true,
+        "MD013": true,
+        "MD033": false
+    },
+    "markdownlint.focusMode": false,
 
-  // Prettier
-  "prettier.enable": true,
-  "[kotlin]": {
-    "editor.defaultFormatter": "fwcd.kotlin"
-  },
-  "[csharp]": {
-    "editor.defaultFormatter": "ms-dotnettools.csharp"
-  },
-  "window.zoomLevel": 1,
-  "workbench.iconTheme": "material-icon-theme",
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  }
+    // Prettier
+    "prettier.enable": true,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "none",
+
+    "[kotlin]": {
+        "editor.defaultFormatter": "fwcd.kotlin"
+    },
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "window.zoomLevel": 1,
+    "workbench.iconTheme": "material-icon-theme",
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    }
 }
