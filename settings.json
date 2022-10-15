@@ -66,5 +66,8 @@
     "workbench.iconTheme": "material-icon-theme",
     "[prisma]": {
         "editor.defaultFormatter": "Prisma.prisma"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     }
 }
