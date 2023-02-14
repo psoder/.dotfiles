@@ -26,6 +26,7 @@ alias ls='lsd'
 alias rm='rm'
 alias cp='cp -i'
 alias mv='mv -i'
+alias cat='highlight -O truecolor --force'
 
 # Utilities
 alias fd='find . -type d -name'
@@ -67,6 +68,13 @@ alias yarnoops='rm -rf node_modules yarn.lock'
 
 # Git
 alias gs="git status"
+
+alias gz="git stash"
+alias gzp="git stash pop"
+alias gzl="git stash list"
+alias gzs="git stash show"
+alias gzc="git stash clear"
+
 alias yolo="git commit -m '$(curl -s http://whatthecommit.com/index.txt)'"
 
 function glo() {
