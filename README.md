@@ -29,6 +29,9 @@ ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 
 # VS Code
 ln -s ~/.dotfiles/settings.json ~/.config/Code/User/settings.json
+
+# VIM
+ln -s ~/.dotfiles/.vim ~/.vim
 ```
 
 ## 3. Install Apps

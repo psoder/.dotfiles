@@ -10,9 +10,11 @@
     "editor.suggestSelection": "first",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.quickSuggestions": {
+        "strings": true
+    },
 
     // Eh
-    "explorer.sortOrder": "type",
     "files.trimFinalNewlines": true,
     "files.exclude": {
         "**/.classpath": true,
@@ -21,7 +23,8 @@
         "**/.factorypath": true
     },
     "files.associations": {
-        ".zshrc": "shellscript"
+        ".zshrc": "shellscript",
+        "*.css": "tailwindcss"
     },
     "telemetry.telemetryLevel": "off",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -69,5 +72,21 @@
     },
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html"
     }
 }
