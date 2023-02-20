@@ -84,6 +84,12 @@ npm install -g n
 # LSD
 # TODO
 
+# Highlight
+sudo apt install highlight
+
+# tree
+sudo apt install tree
+
 # Powerlevel10k
 # 1. Install font
 wget -P ~/.local/share/fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf

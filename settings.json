@@ -85,7 +85,6 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-
     "tailwindCSS.includeLanguages": {
         "plaintext": "html"
     }
