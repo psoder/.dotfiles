@@ -20,8 +20,16 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
 # Install and test installation
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
-sudo docker run hello-world
 
+# Run without sudo
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "$HOME/.docker" -R
+
+docker run hello-world
 
 # Docker compose
 mkdir -p ~/.docker/cli-plugins/

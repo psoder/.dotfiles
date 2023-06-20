@@ -88,5 +88,8 @@
     },
     "tailwindCSS.includeLanguages": {
         "plaintext": "html"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
