@@ -15,3 +15,8 @@
 
 [pull]
 	rebase = false
+
+[includeif "gitdir:~/AreaChica/*"]
+	[user]
+		name = Pontus Söderlund
+		email = pontus@areachica.se
