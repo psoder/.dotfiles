@@ -11,3 +11,9 @@ Host github.com
 	HostName github.com
 	User git
 	IdentityFile ~/.ssh/id_ed25519_personal
+	
+#areachica
+Host bitbucket.org
+	HostName bitbucket.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_areachica
