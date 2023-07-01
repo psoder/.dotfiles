@@ -16,6 +16,9 @@
 [pull]
 	rebase = false
 
+[push]
+	autoSetupRemote = true
+
 [includeif "gitdir:~/AreaChica/*"]
 	[user]
 		name = Pontus Söderlund
