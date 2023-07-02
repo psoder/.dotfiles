@@ -37,6 +37,8 @@ alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias xclipc='xclip -selection clipboard'
 
+alias clera="clear"
+
 function randomCow() {
     cows=(
         apt bud-frogs bunny cheese cock cower daemon default dragon
@@ -60,7 +62,7 @@ function yoloGitCow() {
 
 # Shortcuts
 alias dot="code -n dotl"
-alias upg="sudo apt update && sudo apt upgrade -y"
+alias upg="sudo apt update && sudo apt upgrade -y && sudo apt autoremove  && sudo apt autoclean"
 alias eu="setxkbmap eu"
 alias slp="systemctl suspend"
 alias vsc='code -n .'
