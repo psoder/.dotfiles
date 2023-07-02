@@ -41,8 +41,9 @@
         "editor.selectionBackground": "#135564",
         "editor.selectionHighlightBackground": "#135564"
     },
-    "window.zoomLevel": 1,
     "workbench.iconTheme": "material-icon-theme",
+
+    "window.zoomLevel": 1,
 
     // Extensions
     // Redhat
