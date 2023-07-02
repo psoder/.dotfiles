@@ -5,7 +5,7 @@ source $HOME/.dotfiles/zsh/config
 source $HOME/.dotfiles/zsh/plugins
 
 # Load: OH-MY-ZSH
-source $ZSH/oh-my-zsh.sh
+source $HOME/.dotfiles/zsh/.oh-my-zsh/oh-my-zsh.sh
 
 # Load: ALIASES
 source $HOME/.dotfiles/zsh/aliases
@@ -19,7 +19,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME/.dotfiles/js/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # bun completions
 [ -s "/home/psoder/.bun/_bun" ] && source "/home/psoder/.bun/_bun"
