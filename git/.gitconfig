@@ -8,7 +8,7 @@
 	email = 52171526+psoder@users.noreply.github.com
 
 [help]
-	autocorrect = 25
+	autocorrect = 15
 
 [init]
 	defaultBranch = main
@@ -19,7 +19,7 @@
 [push]
 	autoSetupRemote = true
 
-[includeif "gitdir:~/AreaChica/*"]
+[includeIf "gitdir:~/AreaChica/*"]
 	[user]
 		name = Pontus Söderlund
 		email = pontus@areachica.se
