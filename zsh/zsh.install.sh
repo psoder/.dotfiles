@@ -31,8 +31,8 @@ sudo apt-get install autojump zsh-autosuggestions zsh-syntax-highlighting
 
 
 # 5. Configuration
-mv -f ~/.zshrc ~/.dotfiles/zsh/.zshrc.orig
-ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
+mv -f ~/.zshrc ~/.dotfiles/zsh/zsh.zshrc.orig
+ln -s ~/.dotfiles/zsh/zsh.zshrc ~/.zshrc
 
-mv -f ~/.p10k ~/.dotfiles/zsh/.p10k.orig
-ln -s ~/.dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
+mv -f ~/.p10k.zsh ~/.dotfiles/zsh/zsh.p10k.zsh.orig
+ln -s ~/.dotfiles/zsh/zsh.p10k.zsh ~/.p10k.zsh
