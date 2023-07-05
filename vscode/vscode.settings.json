@@ -13,6 +13,7 @@
     "editor.quickSuggestions": {
         "strings": true
     },
+    "editor.inlineSuggest.enabled": true,
 
     // Eh
     "files.trimFinalNewlines": true,
@@ -36,7 +37,7 @@
     "workbench.editorAssociations": {
         "*.dat": "default"
     },
-    "workbench.colorTheme": "Andromeda",
+    "workbench.colorTheme": "SynthWave '84",
     "workbench.colorCustomizations": {
         "editor.selectionBackground": "#135564",
         "editor.selectionHighlightBackground": "#135564"
@@ -92,6 +93,5 @@
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "workbench.startupEditor": "none"
+    }
 }
