@@ -95,6 +95,9 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 ### 3.1 Tools
 
 ```sh
+#tmux
+~/.dotfiles/tmux/tmux.install.sh
+
 # VLC
 flatpak install flathub org.videolan.VLC
 
