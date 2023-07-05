@@ -83,7 +83,7 @@ flatpak install flathub org.qbittorrent.qBittorrent
 ./apps/docker.sh
 
 # VS Code
-./vscode/vscode.sh
+./vscode/vscode.install.sh
 
 # SDKMAN
 curl -s "https://get.sdkman.io" | bash
