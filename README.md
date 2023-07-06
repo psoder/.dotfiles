@@ -27,10 +27,6 @@ ln -s ~/.dotfiles/ssh/ssh.config ~/.ssh/config
 mv -f ~/.gitconfig ~/.dotfiles/git/.gitconfig.orig
 ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 
-# VS Code
-mv -f ~/.config/Code/User/settings.json ~/.dotfiles/vscode/settings.json.orig
-ln -s ~/.dotfiles/vscode/vscode.settings.json ~/.config/Code/User/settings.json
-
 # Vim
 mv -f ~/.vim ~/.dotfiles/vim/.vim.orig
 ln -s ~/.dotfiles/vim ~/.vim
@@ -113,6 +109,10 @@ ln -s ~/.dotfiles/js/npm/.npm-init.js ~/.npm-init.js
 # yarn
 corepack enable
 corepack prepare yarn@stable --activate
+
+# piper
+sudo apt install ratbagd
+flatpak install flathub org.freedesktop.Piper
 ```
 
 ### 3.2 Entertainment
