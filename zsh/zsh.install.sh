@@ -22,6 +22,7 @@ wget -P ~/.local/share/fonts https://github.com/romkatv/powerlevel10k-media/raw/
 sudo apt-get install fonts-powerline -y
 
 # 3.2. Install Powerlevel10k
+export ZSH_CUSTOM=$ZSH/custom
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 exec zsh
 
