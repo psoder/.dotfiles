@@ -37,15 +37,13 @@
     "workbench.editorAssociations": {
         "*.dat": "default"
     },
-    "workbench.colorTheme": "SynthWave '84",
+    "workbench.colorTheme": "Andromeda",
     "workbench.colorCustomizations": {
         "editor.selectionBackground": "#135564",
         "editor.selectionHighlightBackground": "#135564"
     },
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
-
-    "window.zoomLevel": 1,
 
     // Extensions
     // Redhat
@@ -94,5 +92,12 @@
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    },
+    "window.zoomLevel": 2
 }
