@@ -19,7 +19,27 @@
 [push]
 	autoSetupRemote = true
 
+[alias]
+	pod = pull origin dev
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	df = diff
+	dc = diff --cached
+	dfs = diff --stat
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	s = stash
+	sp = stash pop
+	sa = stash push --include-untracked
+	sl = stash list
+	ss = stash show --stat
+
 [includeIf "gitdir:~/AreaChica/*"]
 	[user]
 		name = Pontus Söderlund
 		email = pontus@areachica.se
+
+[diff "lockb"]
+	textconv = bun
+	binary = true
