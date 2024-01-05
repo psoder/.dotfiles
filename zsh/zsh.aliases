@@ -26,7 +26,6 @@ alias ls='lsd'
 alias rm='rm'
 alias cp='cp -i'
 alias mv='mv -i'
-alias cat='highlight -O truecolor --force'
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias sail-up='sail up -d && sail artisan queue:work &; sail up'
