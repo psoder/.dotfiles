@@ -30,6 +30,10 @@ ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 # Vim
 mv -f ~/.vim ~/.dotfiles/vim/.vim.orig
 ln -s ~/.dotfiles/vim ~/.vim
+
+# Neovim
+mv -f ${XDG_CONFIG_HOME:-$HOME/.config}/nvim ~/.dotfiles/nvim/nvim.orig
+ln -s ~/.dotfiles/nvim ${XDG_CONFIG_HOME:-$HOME/.config}/nvim
 ```
 
 ## 3 Install Apps
