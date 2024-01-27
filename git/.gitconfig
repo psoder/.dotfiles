@@ -35,10 +35,10 @@
 	sl = stash list
 	ss = stash show --stat
 
-[includeIf "gitdir:~/AreaChica/*"]
+[includeIf "gitdir:~/Clira/*"]
 	[user]
 		name = Pontus Söderlund
-		email = pontus@areachica.se
+		email = pontus@clira.io
 
 [diff "lockb"]
 	textconv = bun
