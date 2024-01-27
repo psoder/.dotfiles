@@ -35,7 +35,8 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
-alias xclipc='xclip -selection clipboard'
+
+alias path='echo -e ${PATH//:/\\n}'
 
 alias clera="clear"
 
