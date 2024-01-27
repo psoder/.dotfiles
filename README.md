@@ -85,15 +85,17 @@ flatpak install flathub org.qbittorrent.qBittorrent
 # VS Code
 ./vscode/vscode.install.sh
 
+# NeoVim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+
 # SDKMAN
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # tree
 sudo apt install tree
-
-# Highlight
-sudo apt install highlight
 
 # n, npm and Node (https://github.com/tj/n/)
 export N_PREFIX=$HOME/.dotfiles/js/n
@@ -109,10 +111,6 @@ ln -s ~/.dotfiles/js/npm/.npmrc ~/.npmrc
 
 mv -f ~/.npm-init.js ~/.dotfiles/js/.npm-init.js.orig
 ln -s ~/.dotfiles/js/npm/.npm-init.js ~/.npm-init.js
-
-# yarn
-corepack enable
-corepack prepare yarn@stable --activate
 
 # piper
 sudo apt install ratbagd
@@ -143,18 +141,4 @@ flatpak install flathub com.discordapp.Discord
 
 # Slack
 flatpak install flathub com.slack.Slack
-```
-
-### 3.3 Other
-
-```sh
-# thefuck
-sudo apt install thefuck
-
-
-# n, npm and Node
-curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
-bash n lts
-# Now node and npm are available
-npm install -g n
 ```
