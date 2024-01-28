@@ -4,10 +4,13 @@
 
 ```bash
 # Using SSH
-git clone git@github.com:psoder/.dotfiles.git
+git clone --recurse-submodules git@github.com:psoder/.dotfiles.git
 
 # Using HTTPS
-git clone https://github.com/psoder/.dotfiles.git
+git clone --recurse-submodules https://github.com/psoder/.dotfiles.git
+
+# To update the sub-repos
+git submodule update --init --recursive
 ```
 
 ## 2 Create symlinks
@@ -27,14 +30,11 @@ ln -s ~/.dotfiles/ssh/ssh.config ~/.ssh/config
 mv -f ~/.gitconfig ~/.dotfiles/git/.gitconfig.orig
 ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 
-# Vim
-mv -f ~/.vim ~/.dotfiles/vim/.vim.orig
-ln -s ~/.dotfiles/vim ~/.vim
-
 # Neovim
 mv -f ${XDG_CONFIG_HOME:-$HOME/.config}/nvim ~/.dotfiles/nvim/nvim.orig
 ln -s ~/.dotfiles/nvim ${XDG_CONFIG_HOME:-$HOME/.config}/nvim
-```
+ln -s ~/.dotfiles/nvim/nvchad.custom ~/.dotfiles/nvim/nvchad/lua/custom
+``
 
 ## 3 Install Apps
 
@@ -86,9 +86,8 @@ flatpak install flathub org.qbittorrent.qBittorrent
 ./vscode/vscode.install.sh
 
 # NeoVim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
+curl -L -o ~/.local/bin/nvim  https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x ~/.local/bin/nvim
 
 # SDKMAN
 curl -s "https://get.sdkman.io" | bash
