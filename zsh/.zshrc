@@ -26,4 +26,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export PATH="$HOME/.local/bin:$PATH"
