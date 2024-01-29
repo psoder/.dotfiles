@@ -1,0 +1,11 @@
+shell: "/usr/bin/zsh"
+
+window:
+  decoration: "None"
+  opacity: 0.9
+
+keyboard:
+  bindings:
+    key: "Return"
+    mods: "Control|Shift"
+    action: "SpawnNewInstance"
