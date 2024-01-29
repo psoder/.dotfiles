@@ -34,7 +34,10 @@ ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 mv -f ${XDG_CONFIG_HOME:-$HOME/.config}/nvim ~/.dotfiles/nvim/nvim.orig
 ln -s ~/.dotfiles/nvim ${XDG_CONFIG_HOME:-$HOME/.config}/nvim
 ln -s ~/.dotfiles/nvim/nvchad.custom ~/.dotfiles/nvim/nvchad/lua/custom
-``
+
+# Alacritty
+ln -s ~/.dotfiles/alacritty ${XDG_CONFIG_HOME:-$HOME/.config}/alacritty
+```
 
 ## 3 Install Apps
 
@@ -58,7 +61,10 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 ### 3.1 Tools
 
 ```sh
-#tmux
+# Alacritty
+sudo apt install alacritty
+
+# tmux
 ~/.dotfiles/tmux/tmux.install.sh
 
 # VLC
