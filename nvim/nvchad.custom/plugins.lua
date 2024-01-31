@@ -17,6 +17,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "lua-language-server",
         "prettierd",
         "typescript-language-server",
         "tailwindcss-language-server",
@@ -50,6 +51,14 @@ local plugins = {
         "php",
       }
     end
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    config = function ()
+     require("copilot").setup({})
+    end,
+    opts = {},
   },
 }
 
