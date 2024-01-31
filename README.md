@@ -32,7 +32,7 @@ ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 
 # Neovim
 mv -f ${XDG_CONFIG_HOME:-$HOME/.config}/nvim ~/.dotfiles/nvim/nvim.orig
-ln -s ~/.dotfiles/nvim ${XDG_CONFIG_HOME:-$HOME/.config}/nvim
+ln -s ~/.dotfiles/nvim/nvchad ${XDG_CONFIG_HOME:-$HOME/.config}/nvim
 ln -s ~/.dotfiles/nvim/nvchad.custom ~/.dotfiles/nvim/nvchad/lua/custom
 
 # Alacritty
