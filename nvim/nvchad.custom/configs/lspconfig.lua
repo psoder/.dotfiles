@@ -3,8 +3,8 @@ local on_attach = base.on_attach
 local capabilities = base.capabilities
 
 local lspconfig = require("lspconfig")
-
 local servers = {
+  "lua-language-server",
   "tsserver",
   "tailwindcss",
   "eslint",
