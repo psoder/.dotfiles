@@ -22,6 +22,9 @@ local plugins = {
         "typescript-language-server",
         "tailwindcss-language-server",
         "eslint-lsp",
+        "intelephense",
+        "phpstan",
+        "pint",
       }
     }
   },
