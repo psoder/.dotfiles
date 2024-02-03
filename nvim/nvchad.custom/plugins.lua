@@ -8,7 +8,7 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
-    config = function ()
+    config = function()
       require("plugins.configs.lspconfig")
       require("custom.configs.lspconfig")
     end,
@@ -37,13 +37,13 @@ local plugins = {
       "typescriptreact",
       "html",
     },
-    config = function ()
+    config = function()
       require("nvim-ts-autotag").setup()
     end
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = function ()
+    opts = function()
       opts = require("plugins.configs.treesitter")
       opts.ensure_installed = {
         "lua",
@@ -58,10 +58,14 @@ local plugins = {
   {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
-    config = function ()
-     require("copilot").setup({})
+    config = function()
+      require("copilot").setup({})
     end,
     opts = {},
+  },
+  {
+    "hiphish/rainbow-delimiters.nvim",
+    lazy = false,
   },
 }
 
