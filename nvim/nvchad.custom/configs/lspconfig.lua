@@ -9,6 +9,7 @@ local servers = {
   "tailwindcss",
   "eslint",
   "cssls",
+  "intelephense",
 }
 
 for _, lsp in ipairs(servers) do
