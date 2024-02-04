@@ -67,6 +67,14 @@ local plugins = {
     "hiphish/rainbow-delimiters.nvim",
     lazy = false,
   },
-}
+    "rmagatti/auto-session",
+    lazy = false,
+    config = function ()
+      require('auto-session').setup({
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+      })
+    end,
+  }
+
 
 return plugins
