@@ -13,7 +13,7 @@ M.abc = {
     ["<C-u>"] = { "<C-u>zz", "Half window down and center" },
     ["n"] = { "nzzzv", "Keep search term in middle" },
     ["N"] = { "Nzzzv", "Keep search term in middle" },
-    ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]] }
+    ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Select term and search' }
   },
 
   i = {},
