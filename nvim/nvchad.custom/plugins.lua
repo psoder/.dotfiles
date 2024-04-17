@@ -56,23 +56,15 @@ local plugins = {
     end
   },
   {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({})
-    end,
-    opts = {},
-  },
-  {
     "hiphish/rainbow-delimiters.nvim",
     lazy = false,
   },
   {
     "rmagatti/auto-session",
     lazy = false,
-    config = function ()
+    config = function()
       require('auto-session').setup({
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
       })
     end,
   },
