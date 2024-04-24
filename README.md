@@ -36,7 +36,7 @@ ln -s ~/.dotfiles/alacritty ${XDG_CONFIG_HOME:-$HOME/.config}/alacritty
 ### 3.0 `Zsh`
 
 ```sh
-~/.dotfiles/zsh/zsh.install.sh
+./scripts/zsh.install.sh
 ```
 
 ### 3.1 Flatpak
@@ -57,7 +57,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo apt install alacritty
 
 # tmux
-~/.dotfiles/tmux/tmux.install.sh
+./scripts/tmux.install.sh
 
 # VLC
 flatpak install flathub org.videolan.VLC
@@ -78,10 +78,10 @@ flatpak install flathub com.calibre_ebook.calibre
 flatpak install flathub org.qbittorrent.qBittorrent
 
 # Docker
-./apps/docker.sh
+./scripts/docker.install.sh
 
 # VS Code
-./vscode/vscode.install.sh
+./scripts/vscode.install.sh
 
 # NeoVim
 curl -L -o ~/.local/bin/nvim  https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
