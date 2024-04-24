@@ -1,0 +1,37 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+;",
+        "command": "github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+        "key": "ctrl+k d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+k r",
+        "command": "editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "shift+f12",
+        "command": "-editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.addSelectionToPreviousFindMatch"
+    }
+]
