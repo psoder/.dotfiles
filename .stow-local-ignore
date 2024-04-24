@@ -13,6 +13,5 @@ apps
 bash
 js
 nvim
-ssh
 tmux
 vscode
