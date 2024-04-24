@@ -21,14 +21,6 @@ git submodule update --init --recursive
 # ln -s ~/.dotfiles/bash/.bash_aliases ~/.bash_aliases
 # mv -f ~/./bash/. ~/..bashrc.orig
 # ln -s ~/.dotfiles/bash/.bashrc ~/.bashrc
-
-# Neovim
-mv -f ${XDG_CONFIG_HOME:-$HOME/.config}/nvim ~/.dotfiles/nvim/nvim.orig
-ln -s ~/.dotfiles/nvim/nvchad ${XDG_CONFIG_HOME:-$HOME/.config}/nvim
-ln -s ~/.dotfiles/nvim/nvchad.custom ~/.dotfiles/nvim/nvchad/lua/custom
-
-# Alacritty
-ln -s ~/.dotfiles/alacritty ${XDG_CONFIG_HOME:-$HOME/.config}/alacritty
 ```
 
 ## 3 Install Apps
