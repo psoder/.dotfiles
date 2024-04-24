@@ -10,6 +10,3 @@ rm -f packages.microsoft.gpg
 sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
-
-mv -f ~/.config/Code/User/settings.json ~/.dotfiles/vscode/settings.json.orig
-ln -s ~/.dotfiles/vscode/vscode.settings.json ~/.config/Code/User/settings.json
