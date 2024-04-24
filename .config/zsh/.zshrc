@@ -1,17 +1,18 @@
 # Load: Configurations
-source $HOME/.dotfiles/zsh/.config
+source $ZDOTDIR/.config
 
 # Load: Plugins
-source $HOME/.dotfiles/zsh/.plugins
+source $ZDOTDIR/.plugins
 
 # Load: OH-MY-ZSH
-source $HOME/.dotfiles/zsh/.oh-my-zsh/oh-my-zsh.sh
+source $ZDOTDIR/.oh-my-zsh/oh-my-zsh.sh
 
 # Load: ALIASES
-source $HOME/.dotfiles/zsh/.aliases
+source $ZDOTDIR/.aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh <--- Does not work for some reason
+source $ZDOTDIR/.p10k.zsh
 
 export N_PREFIX="$HOME/.dotfiles/js/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
