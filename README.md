@@ -22,14 +22,6 @@ git submodule update --init --recursive
 # mv -f ~/./bash/. ~/..bashrc.orig
 # ln -s ~/.dotfiles/bash/.bashrc ~/.bashrc
 
-# SSH
-mv -f ~/.ssh/config ~/.dotfiles/ssh/config.orig
-ln -s ~/.dotfiles/ssh/ssh.config ~/.ssh/config
-
-# Git
-mv -f ~/.gitconfig ~/.dotfiles/git/.gitconfig.orig
-ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
-
 # Neovim
 mv -f ${XDG_CONFIG_HOME:-$HOME/.config}/nvim ~/.dotfiles/nvim/nvim.orig
 ln -s ~/.dotfiles/nvim/nvchad ${XDG_CONFIG_HOME:-$HOME/.config}/nvim
