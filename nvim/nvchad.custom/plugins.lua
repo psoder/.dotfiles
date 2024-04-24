@@ -55,10 +55,10 @@ local plugins = {
       }
     end
   },
-  {
-    "hiphish/rainbow-delimiters.nvim",
-    lazy = false,
-  },
+  -- {
+  --   "hiphish/rainbow-delimiters.nvim",
+  --   lazy = false,
+  -- },
   {
     "rmagatti/auto-session",
     lazy = false,
