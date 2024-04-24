@@ -1,0 +1,20 @@
+# Comments and blank lines are allowed.
+
+\.git
+\.gitignore
+\.gitmodules
+
+^/README.*
+
+scripts
+
+alacritty
+apps
+bash
+git
+js
+nvim
+ssh
+tmux
+vscode
+zsh
