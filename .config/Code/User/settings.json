@@ -4,7 +4,6 @@
     // Editor
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
-    "editor.cursorBlinking": "smooth",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": false,
     "editor.suggestSelection": "first",
@@ -42,7 +41,6 @@
     "workbench.editorAssociations": {
         "*.dat": "default"
     },
-    "workbench.colorTheme": "Andromeda",
     "workbench.colorCustomizations": {
         "editor.selectionBackground": "#135564",
         "editor.selectionHighlightBackground": "#135564"
@@ -67,7 +65,7 @@
     "prettier.enable": true,
     "prettier.tabWidth": 4,
     "prettier.printWidth": 100,
-    "prettier.trailingComma": "none",
+    "prettier.trailingComma": "es5",
 
     "[kotlin]": {
         "editor.defaultFormatter": "fwcd.kotlin"
@@ -108,5 +106,80 @@
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
-    "cSpell.language": "en,sv-SE"
+    "cSpell.language": "en,sv-SE",
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "cSpell.userWords": [
+        "Occurence"
+    ],
+    "explorer.sortOrder": "type",
+    "explorer.incrementalNaming": "smart",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSurroundingLines": 3,
+    "typescript.tsserver.enableTracing": true,
+    "workbench.colorTheme": "Andromeda",
+    "indentRainbow.indicatorStyle": "light",
+    "trailing-spaces.deleteModifiedLinesOnly": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "editor.tokenColorCustomizations": {
+        "[*Light*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#000"
+                    }
+                }
+            ]
+        },
+        "[*Dark*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#fff"
+                    }
+                }
+            ]
+        },
+        "textMateRules": [
+            {
+                "name": "One Dark italic",
+                "scope": [
+                    "comment",
+                    "entity.other.attribute-name",
+                    "keyword",
+                    "markup.underline.link",
+                    "storage.modifier",
+                    "storage.type",
+                    "string.url",
+                    "variable.language.super",
+                    "variable.language.this"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "One Dark italic reset",
+                "scope": [
+                    "keyword.operator",
+                    "keyword.other.type",
+                    "storage.modifier.import",
+                    "storage.modifier.package",
+                    "storage.type.built-in",
+                    "storage.type.function.arrow",
+                    "storage.type.generic",
+                    "storage.type.java",
+                    "storage.type.primitive"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "prisma.showPrismaDataPlatformNotification": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false
 }
