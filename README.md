@@ -9,6 +9,10 @@ git clone --recurse-submodules git@github.com:psoder/.dotfiles.git
 # Using HTTPS
 git clone --recurse-submodules https://github.com/psoder/.dotfiles.git
 
+# Update HTTPS clone to SSH
+# https://stackoverflow.com/questions/57230972/how-to-migrate-from-https-to-ssh-github
+git remote set-url origin git@github.com:psoder/.dotfiles.git
+
 # To update the sub-repos
 git submodule update --init --recursive
 ```
@@ -25,7 +29,7 @@ git submodule update --init --recursive
 
 ## 3 Install Apps
 
-### 3.0 `Zsh`
+### 3.0 `zsh`
 
 ```sh
 ./scripts/zsh.install.sh
