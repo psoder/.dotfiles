@@ -1,2 +1,4 @@
 .oh-my-zsh/
 .zcompdump*
+.zsh_history
+
