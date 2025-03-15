@@ -4,3 +4,4 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 # bun completions
 [ -s "/home/psoder/.bun/_bun" ] && source "/home/psoder/.bun/_bun"
+. "$HOME/.cargo/env"

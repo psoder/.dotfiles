@@ -2,10 +2,9 @@ shell = "/usr/bin/zsh"
 
 [window]
 
-decoration = "None"
-
-opacity = 0.5
-
+opacity = 0.9
+decorations = "None"
+blur = true
 
 [keyboard]
 
