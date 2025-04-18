@@ -1,11 +1,11 @@
 # Load: Configurations
 source $ZDOTDIR/.config
 
-# Load: Plugins
-source $ZDOTDIR/.plugins
-
 # Load: OH-MY-ZSH
 source $ZDOTDIR/.oh-my-zsh/oh-my-zsh.sh
+
+# Load: Plugins
+source $ZDOTDIR/.plugins
 
 # Load: ALIASES
 source $ZDOTDIR/.aliases
@@ -30,3 +30,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(mise activate zsh)"
