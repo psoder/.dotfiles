@@ -14,7 +14,7 @@
 	defaultBranch = main
 
 [pull]
-	rebase = false
+	rebase = true
 
 [push]
 	autoSetupRemote = true
@@ -22,6 +22,8 @@
 [alias]
 	pod = pull origin dev
 	st = status
+	sw = switch
+	swc = switch -c
 	co = checkout
 	ci = commit
 	br = branch
