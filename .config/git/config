@@ -7,8 +7,13 @@
 	name = Pontus
 	email = 52171526+psoder@users.noreply.github.com
 
+[includeIf "gitdir:~/Clira/*"]
+	[user]
+		name = Pontus Söderlund
+		email = pontus@clira.io
+
 [help]
-	autocorrect = 15
+	autocorrect = 10
 
 [init]
 	defaultBranch = main
@@ -19,31 +24,33 @@
 [push]
 	autoSetupRemote = true
 
+[mere]
+	conflictstyle = diff3
+
+[rerere]
+	enabled = true
+
 [alias]
 	pod = pull origin dev
 	sw = switch
 	swc = switch -c
-	co = checkout
-	ci = commit
-	br = branch
 	df = diff
+	wd = diff --word-diff
 	dc = diff --cached
 	dfs = diff --stat
 	lg = log --oneline --graph --abbrev-commit --date=relative
-	s = stash
 	sp = stash pop
 	sa = stash push --include-untracked
 	sl = stash list
 	ss = stash show --stat
 
-[includeIf "gitdir:~/Clira/*"]
-	[user]
-		name = Pontus Söderlund
-		email = pontus@clira.io
-
 [diff "lockb"]
 	textconv = bun
 	binary = true
+
+[grep]
+	lineNumber = true
+	patternType = perl
 
 [color]
 	ui = auto
