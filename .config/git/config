@@ -21,7 +21,6 @@
 
 [alias]
 	pod = pull origin dev
-	st = status
 	sw = switch
 	swc = switch -c
 	co = checkout
@@ -30,7 +29,7 @@
 	df = diff
 	dc = diff --cached
 	dfs = diff --stat
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log --oneline --graph --abbrev-commit --date=relative
 	s = stash
 	sp = stash pop
 	sa = stash push --include-untracked
@@ -45,3 +44,32 @@
 [diff "lockb"]
 	textconv = bun
 	binary = true
+
+[color]
+	ui = auto
+
+[color "diff"]
+    meta = 244
+    frag = 45
+    old = 196
+    new = 76
+    whitespace = 199
+
+[color "status"]
+    added = 40
+	changed = 75
+    untracked = 214
+	branch = 201
+	remoteBranch = 200
+
+[color "branch"]
+    current = 81 reverse
+    local = 45
+    remote = 114
+
+[color "decorate"]
+	branch = 82
+	remoteBranch = 214
+	tag = 2
+	stash = 3
+	HEAD = 33
