@@ -2,6 +2,7 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.config/git/gitignore_global
+	pager = delta
 
 [user]
 	name = Pontus
@@ -13,7 +14,7 @@
 		email = pontus@clira.io
 
 [help]
-	autocorrect = 10
+	autocorrect = 13
 
 [init]
 	defaultBranch = main
@@ -25,7 +26,7 @@
 	autoSetupRemote = true
 
 [mere]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 
 [rerere]
 	enabled = true
@@ -51,6 +52,12 @@
 [grep]
 	lineNumber = true
 	patternType = perl
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
 
 [color]
 	ui = auto

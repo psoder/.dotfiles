@@ -17,14 +17,20 @@ git remote set-url origin git@github.com:psoder/.dotfiles.git
 git submodule update --init --recursive
 ```
 
-## 2 Create symlinks
 
-```bash
-# Bash
-# mv -f ~/.bash_aliases ~/.bash_aliases.orig
-# ln -s ~/.dotfiles/bash/.bash_aliases ~/.bash_aliases
-# mv -f ~/./bash/. ~/..bashrc.orig
-# ln -s ~/.dotfiles/bash/.bashrc ~/.bashrc
+## 2 Create symlinks
+```
+pacman -S extra/stow ghostty fish neovim fd bat eza dust starship git-delta ripgrep ripgrep-all tokei atuin zellij
+
+pacman -S docker docker-compose chromium
+
+curl https://mise.run | sh
+
+pacman -S spotify-launcher
+```
+
+```sh
+stow .
 ```
 
 ## 3 Install Apps

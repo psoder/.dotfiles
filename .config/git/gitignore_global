@@ -13,3 +13,7 @@
 
 *.swp
 *.log
+
+mise.local.toml
+
+.env
