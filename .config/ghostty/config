@@ -38,3 +38,5 @@ initial-command = fish
 theme = CobaltNext-Dark
 background = 282c34
 background-opacity = 0.95
+keybind = ctrl+shift+enter=toggle_fullscreen
+keybind = ctrl+enter=unbind
