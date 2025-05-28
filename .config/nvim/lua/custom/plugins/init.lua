@@ -16,6 +16,9 @@ return {
         },
       }
     end,
+    keys = {
+      { '<leader>ft', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle NvimTree' },
+    },
   },
 
   {
