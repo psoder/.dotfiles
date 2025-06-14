@@ -41,13 +41,32 @@ return {
     'nyoom-engineering/oxocarbon.nvim',
     lazy = false,
     init = function()
-      vim.cmd.colorscheme 'oxocarbon'
+      -- vim.cmd.colorscheme 'oxocarbon'
+      --
+      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+      -- vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+      --
+      -- -- You can configure highlights by doing something like:
+      -- vim.cmd.hi 'Comment gui=none'
+    end,
+  },
 
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+  {
+    'rebelot/kanagawa.nvim',
+    lazy = false,
+    init = function()
+      --
+    end,
+  },
 
-      -- You can configure highlights by doing something like:
+  {
+    'catppuccin/nvim',
+    lazy = false,
+    priority = 1000,
+    init = function()
+      vim.cmd.colorscheme 'catppuccin-macchiato'
+
       vim.cmd.hi 'Comment gui=none'
     end,
   },

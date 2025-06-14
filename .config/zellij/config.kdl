@@ -269,7 +269,7 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "catppuccin-frappe"
+theme "catppuccin-macchiato"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -295,7 +295,7 @@ default_shell "fish"
 // 
 // layout_dir "/tmp"
  
-// The folder in which Zellij will look for themes
+// The folder in which Zellij will look for macchiatothemes
 // (Requires restart)
 // 
 // theme_dir "/tmp"
