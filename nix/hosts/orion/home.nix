@@ -119,9 +119,9 @@
   };
 
   home.file = {
-    ".config/nvim".source = ../.config/nvim;
+    ".config/nvim".source = ../../../.config/nvim;
 
-    ".config/git".source = ../.config/git;
+    ".config/git".source = ../../../.config/git;
 
     ".config/ghostty/config".text = ''
       initial-command = fish
@@ -132,11 +132,11 @@
       keybind = ctrl+enter=unbind
     '';
 
-    ".config/zellij".source = ../.config/zellij;
+    ".config/zellij".source = ../../../.config/zellij;
 
-    ".config/starship.toml".source = ../.config/starship.toml;
+    ".config/starship.toml".source = ../../../.config/starship.toml;
 
-    ".config/atuin".source = ../.config/atuin;
+    ".config/atuin".source = ../../../.config/atuin;
   };
 
   # Home Manager can also manage your environment variables through

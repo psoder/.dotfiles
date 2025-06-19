@@ -79,6 +79,9 @@
 
   services.fwupd.enable = true;
 
+  # Enable fingerprint reader support
+  services.fprintd.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -88,9 +91,7 @@
     description = "Pontus";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    	neovim
-	ghostty
-	git
+      spotify
     ];
   };
 
