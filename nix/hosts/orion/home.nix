@@ -46,15 +46,15 @@
   programs.fish = {
     enable = true;
     shellInit = ''
-    	if status is-interactive
-          starship init fish | source
-          atuin init fish | source
+          	if status is-interactive
+                starship init fish | source
+                atuin init fish | source
 
-          if set -q ZELLIJ
-          else
-            zellij
-          end
-	end
+                if set -q ZELLIJ
+                else
+                  zellij
+                end
+      	end
     '';
 
     shellAliases = {
@@ -69,18 +69,18 @@
   programs.git = {
     enable = true;
     aliases = {
-	pod = "pull origin dev";
-	sw = "switch";
-	swc = "switch -c";
-	df = "diff";
-	wd = "diff --word-diff";
-	dc = "diff --cached";
-	dfs = "diff --stat";
-	lg = "log --oneline --graph --abbrev-commit --date=relative";
-	sp = "stash pop";
-	sa = "stash push --include-untracked";
-	sl = "stash list";
-	ss = "stash show --stat";
+      pod = "pull origin dev";
+      sw = "switch";
+      swc = "switch -c";
+      df = "diff";
+      wd = "diff --word-diff";
+      dc = "diff --cached";
+      dfs = "diff --stat";
+      lg = "log --oneline --graph --abbrev-commit --date=relative";
+      sp = "stash pop";
+      sa = "stash push --include-untracked";
+      sl = "stash list";
+      ss = "stash show --stat";
     };
     extraConfig = {
       core = {
@@ -104,18 +104,16 @@
       interactive.diffFilter = "delta --color-only";
       delta.navigate = true;
     };
-    includes = [
-      {
-        contents = {
-          user = {
-            name = "Pontus";
-            email = "pontus@clira.io";
-          };
+    includes = [{
+      contents = {
+        user = {
+          name = "Pontus";
+          email = "pontus@clira.io";
         };
+      };
 
-        condition = "gitdir:~/Clira/*";
-      }
-    ];
+      condition = "gitdir:~/Clira/*";
+    }];
   };
 
   home.file = {
@@ -155,9 +153,7 @@
   #
   #  /etc/profiles/per-user/psoder/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

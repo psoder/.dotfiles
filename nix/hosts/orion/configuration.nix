@@ -5,11 +5,10 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -90,18 +89,14 @@
     isNormalUser = true;
     description = "Pontus";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      spotify
-    ];
+    packages = with pkgs; [ spotify ];
   };
 
   home-manager = {
     # also pass inputs to home-manager module
     extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
-    users = {
-      "psoder" = import ./home.nix;
-    };
+    users = { "psoder" = import ./home.nix; };
   };
 
   # Install firefox.
@@ -119,11 +114,15 @@
     unzip
     ghostty
     gcc
-    busybox 
+    busybox
     ripgrep
     ripgrep-all
     fd
+    nixd
+    nixfmt
   ];
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

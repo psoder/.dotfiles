@@ -1,7 +1,7 @@
 {
   description = "Nixos config flake";
 
-  inputs  = {
+  inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -12,7 +12,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.orion = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
         ./hosts/orion/configuration.nix
         inputs.home-manager.nixosModules.default
