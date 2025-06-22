@@ -89,7 +89,7 @@
     isNormalUser = true;
     description = "Pontus";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ spotify ];
+    packages = with pkgs; [ ];
   };
 
   home-manager = {
@@ -99,11 +99,11 @@
     users = { "psoder" = import ./home.nix; };
   };
 
-  # Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  programs.steam.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
