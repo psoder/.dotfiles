@@ -8,9 +8,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nvf, ... }@inputs: {
+    packages."x86_64-linux".default = (nvf.lib.neovimConfiguration {
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      moudles = ./modules/nvf.nix;
+    });
+
     nixosConfigurations.orion = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [

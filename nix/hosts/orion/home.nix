@@ -118,8 +118,17 @@
     }];
   };
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+
+  };
+
   home.file = {
-    ".config/nvim".source = ../../../.config/nvim;
+    # ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink
+    #   "${config.home.homeDirectory}/.dotfiles/.config/nvim";
 
     ".config/git".source = ../../../.config/git;
 
