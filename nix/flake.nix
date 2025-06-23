@@ -13,14 +13,15 @@
   };
 
   outputs = { self, nixpkgs, nvf, ... }@inputs: {
-    packages."x86_64-linux".default = (nvf.lib.neovimConfiguration {
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
-      moudles = ./modules/nvf.nix;
-    });
+    # packages."x86_64-linux".default = (nvf.lib.neovimConfiguration {
+    #   pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    #   modules = ./modules/nvf.nix;
+    # });
 
     nixosConfigurations.orion = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
+        nvf.nixosModules.default
         ./hosts/orion/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
