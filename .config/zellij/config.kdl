@@ -75,7 +75,7 @@ keybinds clear-defaults=true {
         bind "up" { MovePane "up"; }
         bind "right" { MovePane "right"; }
         bind "h" { MovePane "left"; }
-        bind "Alt h" { SwitchToMode "normal"; }
+        bind "Alt m" { SwitchToMode "normal"; }
         bind "j" { MovePane "down"; }
         bind "k" { MovePane "up"; }
         bind "l" { MovePane "right"; }
@@ -147,7 +147,7 @@ keybinds clear-defaults=true {
         bind "Alt q" { Quit; }
     }
     shared_except "locked" "move" {
-        bind "Alt h" { SwitchToMode "move"; }
+        bind "Alt m" { SwitchToMode "move"; }
     }
     shared_except "locked" "session" {
         bind "Alt o" { SwitchToMode "session"; }
@@ -314,7 +314,7 @@ default_shell "fish"
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
