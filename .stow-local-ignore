@@ -2,14 +2,8 @@
 
 \.git
 \.gitignore
-\.gitmodules
 
 ^/README.*
 
-scripts
-
-bash
-js
-nvchad
 nix
 
