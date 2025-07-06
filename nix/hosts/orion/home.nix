@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "psoder";
@@ -138,6 +138,14 @@
     ".config/starship.toml".source = ../../../.config/starship.toml;
 
     ".config/atuin".source = ../../../.config/atuin;
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/input-sources" = {
+      show-all-sources = true;
+      sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "eu" ]) ];
+      xkb-options = "";
+    };
   };
 
   # Home Manager can also manage your environment variables through
