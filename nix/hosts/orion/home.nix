@@ -69,56 +69,6 @@
     };
   };
 
-  programs.git = {
-    enable = true;
-    aliases = {
-      pod = "pull origin dev";
-      sw = "switch";
-      swc = "switch -c";
-      df = "diff";
-      wd = "diff --word-diff";
-      dc = "diff --cached";
-      dfs = "diff --stat";
-      lg = "log --oneline --graph --abbrev-commit --date=relative";
-      sp = "stash pop";
-      sa = "stash push --include-untracked";
-      sl = "stash list";
-      ss = "stash show --stat";
-    };
-    extraConfig = {
-      core = {
-        pager = "delta";
-        excludesFile = "~/.dotfiles/.config/git/gitignore_global";
-      };
-      user = {
-        name = "Pontus";
-        email = "52171526+psoder@users.noreply.github.com";
-      };
-      help.autocorrect = "15";
-      init.defaultBranch = "main";
-      pull.rebase = true;
-      push.autoSetupRemote = true;
-      merge.conflictstyle = "zdiff";
-      rerere.enabled = true;
-      grep = {
-        lineNumber = true;
-        patternType = "perl";
-      };
-      interactive.diffFilter = "delta --color-only";
-      delta.navigate = true;
-    };
-    includes = [{
-      contents = {
-        user = {
-          name = "Pontus";
-          email = "pontus@clira.io";
-        };
-      };
-
-      condition = "gitdir:~/Clira/*";
-    }];
-  };
-
   home.file = {
     # ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink
     #   "${config.home.homeDirectory}/.dotfiles/.config/nvim";
