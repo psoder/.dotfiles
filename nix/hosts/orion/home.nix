@@ -23,7 +23,7 @@
     starship
     delta
     tokei
-    atuin
+    # atuin
     zellij
 
     rustc
@@ -45,51 +45,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
-  programs.fish = {
-    enable = true;
-    shellInit = ''
-          	if status is-interactive
-                starship init fish | source
-                atuin init fish | source
-
-                if set -q ZELLIJ
-                else
-                  zellij
-                end
-      	end
-    '';
-
-    shellAliases = {
-      vim = "nvim";
-      gs = "git status";
-      dotl = "cd ~/.dotfiles";
-      ls = "eza";
-      cat = "bat";
-    };
-  };
-
-  home.file = {
-    # ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink
-    #   "${config.home.homeDirectory}/.dotfiles/.config/nvim";
-
-    ".config/git".source = ../../../.config/git;
-
-    ".config/ghostty/config".text = ''
-      initial-command = fish
-
-      theme = catppuccin-macchiato 
-      background-opacity = 0.95
-      keybind = ctrl+shift+enter=toggle_fullscreen
-      keybind = ctrl+enter=unbind
-    '';
-
-    ".config/zellij".source = ../../../.config/zellij;
-
-    ".config/starship.toml".source = ../../../.config/starship.toml;
-
-    ".config/atuin".source = ../../../.config/atuin;
-  };
 
   dconf.settings = {
     "org/gnome/desktop/input-sources" = {

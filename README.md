@@ -17,6 +17,12 @@ git remote set-url origin git@github.com:psoder/.dotfiles.git
 git submodule update --init --recursive
 ```
 
+## `.dotfiles`
+
+```bash
+stow -d ~/.dotfiles -t $HOME .
+```
+
 
 ## Arch install
 ```
