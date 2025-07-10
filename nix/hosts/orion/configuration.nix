@@ -90,7 +90,9 @@
     isNormalUser = true;
     description = "Pontus";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    shell = pkgs.fish;
+
+    packages = with pkgs; [ stow atuin ];
   };
 
   home-manager = {
@@ -101,6 +103,7 @@
   };
 
   programs.firefox.enable = true;
+  programs.fish.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
