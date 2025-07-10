@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, lib, ... }:
+{ pkgs, inputs, lib, ... }:
 
 {
   imports = [
@@ -92,22 +92,49 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
 
-    packages = with pkgs; [ stow atuin ];
-  };
+    packages = with pkgs; [
+      stow
+      bat
+      eza
+      dust
+      starship
+      delta
+      tokei
+      atuin
+      zellij
 
-  home-manager = {
-    # also pass inputs to home-manager module
-    extraSpecialArgs = { inherit inputs; };
-    backupFileExtension = "backup";
-    users = { "psoder" = import ./home.nix; };
-  };
+      rustc
+      rustup
+      bun
 
-  programs.firefox.enable = true;
-  programs.fish.enable = true;
+      spotify
+      obsidian
+    ];
+  };
 
   nixpkgs.config.allowUnfree = true;
 
-  programs.steam.enable = true;
+  programs = {
+    dconf.profiles.psoder.databases = [{
+      lockAll = true;
+      settings = {
+        "org/gnome/desktop/input-sources" = {
+          show-all-sources = true;
+          sources = [ [ "xkb:eu" ] ];
+          xkb-options = "";
+        };
+      };
+    }];
+
+    fish.enable = true;
+    firefox.enable = true;
+    steam.enable = true;
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+  };
 
   programs.nvf = {
     enable = true;
