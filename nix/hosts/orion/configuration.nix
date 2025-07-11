@@ -136,266 +136,266 @@
     };
   };
 
-  programs.nvf = {
-    enable = true;
-    settings = {
-      vim = {
-        theme = {
-          enable = true;
-          name = "catppuccin";
-          style = "macchiato";
-        };
-
-        statusline.lualine.enable = true;
-
-        telescope = {
-          enable = true;
-          setupOpts = {
-            defaults = {
-              color_devicons = true;
-              mappings = {
-                i = (lib.generators.mkLuaInline ''
-                  { ['<c-enter>'] = 'to_fuzzy_refine' }
-                '');
-              };
-            };
-          };
-          extensions = [
-            {
-              name = "fzf";
-              packages = [ pkgs.vimPlugins.telescope-fzf-native-nvim ];
-              setup = { fzf = { fuzzy = true; }; };
-            }
-            {
-              name = "ui-select";
-              packages = [ pkgs.vimPlugins.telescope-ui-select-nvim ];
-              setup = {
-                ui-select = "require('telescope.builtin').get_dropdown()";
-              };
-            }
-          ];
-          mappings = {
-            helpTags = "<leader>sh";
-            findFiles = "<leader>sf";
-            liveGrep = "<leader>sg";
-            diagnostics = "<leader>sd";
-            resume = "<leader>sr";
-            buffers = "<leader><leader>";
-          };
-        };
-
-        treesitter = {
-          enable = true;
-          fold = true;
-        };
-
-        autocomplete = {
-          nvim-cmp = {
-            enable = true;
-            mappings = {
-              confirm = "<C-y>";
-              complete = "<C-Space>";
-              next = "<C-n>";
-              previous = "<C-p>";
-              scrollDocsDown = "<C-f>";
-              scrollDocsUp = "<C-b>";
-            };
-            sourcePlugins = [ "cmp-luasnip" "cmp-nvim-lsp" "cmp-path" ];
-          };
-        };
-        autopairs.nvim-autopairs.enable = true;
-        undoFile.enable = true;
-        searchCase = "smart";
-
-        comments.comment-nvim.enable = true;
-
-        filetree.nvimTree = {
-          enable = true;
-          setupOpts = { git.enable = true; };
-        };
-
-        formatter.conform-nvim = {
-          enable = true;
-          setupOpts = { formatters_by_ft = { nix = [ "nixfmt" ]; }; };
-        };
-
-        lsp = {
-          enable = true;
-          formatOnSave = true;
-          lightbulb.enable = true;
-
-          mappings = {
-            nextDiagnostic = "[d";
-            previousDiagnostic = "]d";
-            openDiagnosticFloat = "<leader>e";
-
-            goToDefinition = "gd";
-            listReferences = "gr";
-            listImplementations = "gI";
-            goToType = "<leader>D";
-            listDocumentSymbols = "<leader>ds";
-            signatureHelp = "<leader>ds";
-            listWorkspaceSymbols = "<leader>ws";
-            renameSymbol = "<leader>rn";
-            codeAction = "<leader>ca";
-            goToDeclaration = "<leader>gD";
-          };
-        };
-
-        languages = {
-          enableTreesitter = true;
-
-          nix.enable = true;
-          rust = {
-            enable = true;
-            lsp.enable = true;
-            treesitter.enable = true;
-          };
-          ts.enable = true;
-          lua.enable = true;
-        };
-
-        options = {
-          updatetime = 250;
-          tm = 300;
-        };
-
-        globals = { maplocalleader = " "; };
-
-        utility = {
-          icon-picker.enable = true;
-          smart-splits = {
-            enable = true;
-            keymaps = {
-              swap_buf_down = null;
-              swap_buf_up = null;
-              swap_buf_left = null;
-              swap_buf_right = null;
-            };
-          };
-        };
-
-        binds = {
-          whichKey = {
-            enable = true;
-            register = {
-              "<leader>c" = "[C]ode";
-              "<leader>d" = "[D]ocument";
-              "<leader>r" = "[R]ename";
-              "<leader>s" = "[S]earch";
-              "<leader>w" = "[W]orkspace";
-              "<leader>t" = "[T]oggle";
-              "<leader>h" = "Git [H]unk";
-            };
-          };
-        };
-
-        notes.todo-comments.enable = true;
-
-        git.gitsigns.enable = true;
-
-        startPlugins = [ "vim-sleuth" ];
-
-        diagnostics = {
-          enable = true;
-          nvim-lint = {
-            enable = true;
-            linters_by_ft = { markdown = [ "markdownlint" ]; };
-          };
-        };
-
-        keymaps = [
-          {
-            key = "<ESC>";
-            mode = [ "n" ];
-            action = "<cmd>nohlsearch<CR>";
-          }
-          {
-            key = "<leader>sk";
-            mode = [ "n" ];
-            action = "<cmd>Telescope keymaps<CR>";
-            desc = "[S]earch [K]eymaps";
-          }
-          {
-            key = "<leader>ss";
-            mode = [ "n" ];
-            action = "<cmd>Telescope builtin<CR>";
-            desc = "[S]earch [S]elect Telescope";
-          }
-          {
-            key = "<leader>sw";
-            mode = [ "n" ];
-            action = "<cmd>Telescope grep_string<CR>";
-            desc = "[S]earch current [W]ord";
-          }
-          {
-            key = "<leader>.";
-            mode = [ "n" ];
-            action = "<cmd>Telescope oldfiles<CR>";
-            desc = "[S]earch Recent Files";
-          }
-          {
-            key = "<leader>/";
-            mode = [ "n" ];
-            lua = true;
-            action = ''
-              function()
-                require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-                  winblend = 10,
-                  previewer = false,
-                })
-              end
-            '';
-          }
-          {
-            key = "<leader>s/";
-            mode = [ "n" ];
-            lua = true;
-            action = ''
-              function()
-                require('telescope.builtin').live_grep {
-                  grep_open_files = true,
-                  prompt_title = 'Live Grep in Open Files',
-                }
-              end
-            '';
-          }
-        ];
-
-        mini = {
-          ai.enable = true;
-          surround.enable = true;
-          statusline.enable = true;
-        };
-
-        augroups = [{
-          name = "kickstart-highlight-yank";
-          clear = true;
-        }];
-
-        autocmds = [{
-          enable = true;
-          desc = "Highlight when yanking text";
-          event = [ "TextYankPost" ];
-          group = "kickstart-highlight-yank";
-          callback = (lib.generators.mkLuaInline ''
-            function()
-              vim.highlight.on_yank()
-            end
-          '');
-        }];
-
-        visuals = {
-          nvim-web-devicons.enable = true;
-          fidget-nvim = {
-            enable = true;
-            setupOpts = { integration.nvim-tree.enable = true; };
-          };
-          indent-blankline.enable = true;
-        };
-      };
-    };
-  };
+  # programs.nvf = {
+  #   enable = true;
+  #   settings = {
+  #     vim = {
+  #       theme = {
+  #         enable = true;
+  #         name = "catppuccin";
+  #         style = "macchiato";
+  #       };
+  #
+  #       statusline.lualine.enable = true;
+  #
+  #       telescope = {
+  #         enable = true;
+  #         setupOpts = {
+  #           defaults = {
+  #             color_devicons = true;
+  #             mappings = {
+  #               i = (lib.generators.mkLuaInline ''
+  #                 { ['<c-enter>'] = 'to_fuzzy_refine' }
+  #               '');
+  #             };
+  #           };
+  #         };
+  #         extensions = [
+  #           {
+  #             name = "fzf";
+  #             packages = [ pkgs.vimPlugins.telescope-fzf-native-nvim ];
+  #             setup = { fzf = { fuzzy = true; }; };
+  #           }
+  #           {
+  #             name = "ui-select";
+  #             packages = [ pkgs.vimPlugins.telescope-ui-select-nvim ];
+  #             setup = {
+  #               ui-select = "require('telescope.builtin').get_dropdown()";
+  #             };
+  #           }
+  #         ];
+  #         mappings = {
+  #           helpTags = "<leader>sh";
+  #           findFiles = "<leader>sf";
+  #           liveGrep = "<leader>sg";
+  #           diagnostics = "<leader>sd";
+  #           resume = "<leader>sr";
+  #           buffers = "<leader><leader>";
+  #         };
+  #       };
+  #
+  #       treesitter = {
+  #         enable = true;
+  #         fold = true;
+  #       };
+  #
+  #       autocomplete = {
+  #         nvim-cmp = {
+  #           enable = true;
+  #           mappings = {
+  #             confirm = "<C-y>";
+  #             complete = "<C-Space>";
+  #             next = "<C-n>";
+  #             previous = "<C-p>";
+  #             scrollDocsDown = "<C-f>";
+  #             scrollDocsUp = "<C-b>";
+  #           };
+  #           sourcePlugins = [ "cmp-luasnip" "cmp-nvim-lsp" "cmp-path" ];
+  #         };
+  #       };
+  #       autopairs.nvim-autopairs.enable = true;
+  #       undoFile.enable = true;
+  #       searchCase = "smart";
+  #
+  #       comments.comment-nvim.enable = true;
+  #
+  #       filetree.nvimTree = {
+  #         enable = true;
+  #         setupOpts = { git.enable = true; };
+  #       };
+  #
+  #       formatter.conform-nvim = {
+  #         enable = true;
+  #         setupOpts = { formatters_by_ft = { nix = [ "nixfmt" ]; }; };
+  #       };
+  #
+  #       lsp = {
+  #         enable = true;
+  #         formatOnSave = true;
+  #         lightbulb.enable = true;
+  #
+  #         mappings = {
+  #           nextDiagnostic = "[d";
+  #           previousDiagnostic = "]d";
+  #           openDiagnosticFloat = "<leader>e";
+  #
+  #           goToDefinition = "gd";
+  #           listReferences = "gr";
+  #           listImplementations = "gI";
+  #           goToType = "<leader>D";
+  #           listDocumentSymbols = "<leader>ds";
+  #           signatureHelp = "<leader>ds";
+  #           listWorkspaceSymbols = "<leader>ws";
+  #           renameSymbol = "<leader>rn";
+  #           codeAction = "<leader>ca";
+  #           goToDeclaration = "<leader>gD";
+  #         };
+  #       };
+  #
+  #       languages = {
+  #         enableTreesitter = true;
+  #
+  #         nix.enable = true;
+  #         rust = {
+  #           enable = true;
+  #           lsp.enable = true;
+  #           treesitter.enable = true;
+  #         };
+  #         ts.enable = true;
+  #         lua.enable = true;
+  #       };
+  #
+  #       options = {
+  #         updatetime = 250;
+  #         tm = 300;
+  #       };
+  #
+  #       globals = { maplocalleader = " "; };
+  #
+  #       utility = {
+  #         icon-picker.enable = true;
+  #         smart-splits = {
+  #           enable = true;
+  #           keymaps = {
+  #             swap_buf_down = null;
+  #             swap_buf_up = null;
+  #             swap_buf_left = null;
+  #             swap_buf_right = null;
+  #           };
+  #         };
+  #       };
+  #
+  #       binds = {
+  #         whichKey = {
+  #           enable = true;
+  #           register = {
+  #             "<leader>c" = "[C]ode";
+  #             "<leader>d" = "[D]ocument";
+  #             "<leader>r" = "[R]ename";
+  #             "<leader>s" = "[S]earch";
+  #             "<leader>w" = "[W]orkspace";
+  #             "<leader>t" = "[T]oggle";
+  #             "<leader>h" = "Git [H]unk";
+  #           };
+  #         };
+  #       };
+  #
+  #       notes.todo-comments.enable = true;
+  #
+  #       git.gitsigns.enable = true;
+  #
+  #       startPlugins = [ "vim-sleuth" ];
+  #
+  #       diagnostics = {
+  #         enable = true;
+  #         nvim-lint = {
+  #           enable = true;
+  #           linters_by_ft = { markdown = [ "markdownlint" ]; };
+  #         };
+  #       };
+  #
+  #       keymaps = [
+  #         {
+  #           key = "<ESC>";
+  #           mode = [ "n" ];
+  #           action = "<cmd>nohlsearch<CR>";
+  #         }
+  #         {
+  #           key = "<leader>sk";
+  #           mode = [ "n" ];
+  #           action = "<cmd>Telescope keymaps<CR>";
+  #           desc = "[S]earch [K]eymaps";
+  #         }
+  #         {
+  #           key = "<leader>ss";
+  #           mode = [ "n" ];
+  #           action = "<cmd>Telescope builtin<CR>";
+  #           desc = "[S]earch [S]elect Telescope";
+  #         }
+  #         {
+  #           key = "<leader>sw";
+  #           mode = [ "n" ];
+  #           action = "<cmd>Telescope grep_string<CR>";
+  #           desc = "[S]earch current [W]ord";
+  #         }
+  #         {
+  #           key = "<leader>.";
+  #           mode = [ "n" ];
+  #           action = "<cmd>Telescope oldfiles<CR>";
+  #           desc = "[S]earch Recent Files";
+  #         }
+  #         {
+  #           key = "<leader>/";
+  #           mode = [ "n" ];
+  #           lua = true;
+  #           action = ''
+  #             function()
+  #               require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+  #                 winblend = 10,
+  #                 previewer = false,
+  #               })
+  #             end
+  #           '';
+  #         }
+  #         {
+  #           key = "<leader>s/";
+  #           mode = [ "n" ];
+  #           lua = true;
+  #           action = ''
+  #             function()
+  #               require('telescope.builtin').live_grep {
+  #                 grep_open_files = true,
+  #                 prompt_title = 'Live Grep in Open Files',
+  #               }
+  #             end
+  #           '';
+  #         }
+  #       ];
+  #
+  #       mini = {
+  #         ai.enable = true;
+  #         surround.enable = true;
+  #         statusline.enable = true;
+  #       };
+  #
+  #       augroups = [{
+  #         name = "kickstart-highlight-yank";
+  #         clear = true;
+  #       }];
+  #
+  #       autocmds = [{
+  #         enable = true;
+  #         desc = "Highlight when yanking text";
+  #         event = [ "TextYankPost" ];
+  #         group = "kickstart-highlight-yank";
+  #         callback = (lib.generators.mkLuaInline ''
+  #           function()
+  #             vim.highlight.on_yank()
+  #           end
+  #         '');
+  #       }];
+  #
+  #       visuals = {
+  #         nvim-web-devicons.enable = true;
+  #         fidget-nvim = {
+  #           enable = true;
+  #           setupOpts = { integration.nvim-tree.enable = true; };
+  #         };
+  #         indent-blankline.enable = true;
+  #       };
+  #     };
+  #   };
+  # };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
