@@ -139,6 +139,9 @@
       enable = true;
       withUWSM = true;
     };
+
+    waybar.enable = true;
+    yazi.enable = true;
   };
 
   # programs.nvf = {
@@ -416,6 +419,9 @@
     fd
     nixd
     nixfmt
+
+    wofi
+    font-awesome
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
