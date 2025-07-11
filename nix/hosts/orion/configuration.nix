@@ -134,6 +134,11 @@
       enable = true;
       defaultEditor = true;
     };
+
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
   };
 
   # programs.nvf = {
