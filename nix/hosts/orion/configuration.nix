@@ -102,6 +102,10 @@
       tokei
       atuin
       zellij
+      hyprshot
+      hyprlock
+      hypridle
+      swaynotificationcenter
 
       rustc
       rustup
@@ -141,6 +145,7 @@
     };
 
     waybar.enable = true;
+    
     yazi.enable = true;
   };
 
