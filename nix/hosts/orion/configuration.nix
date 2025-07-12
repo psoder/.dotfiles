@@ -102,10 +102,15 @@
       tokei
       atuin
       zellij
+      fzf
+
       hyprshot
       hyprlock
       hypridle
+      hyprpaper
+      hyprcursor
       swaynotificationcenter
+      catppuccin-cursors.macchiatoPeach
 
       rustc
       rustup
@@ -424,6 +429,7 @@
     fd
     nixd
     nixfmt
+    brightnessctl
 
     wofi
     font-awesome
