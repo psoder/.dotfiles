@@ -1,4 +1,7 @@
 # This is Git's per-user configuration file.
+[include]
+    path = ~/.config/delta/themes/catppuccin.gitconfig
+
 [core]
 	editor = nvim
 	excludesfile = ~/.config/git/gitignore_global
@@ -57,7 +60,8 @@
 	diffFilter = delta --color-only
 
 [delta]
-	navigate = true
+    features = catppuccin-macchiato
+    navigate = true
 
 [color]
 	ui = auto
@@ -71,9 +75,9 @@
 
 [color "status"]
     added = 40
-	changed = 75
+    changed = 75
     untracked = 214
-	branch = 201
+    	branch = 201
 	remoteBranch = 200
 
 [color "branch"]
