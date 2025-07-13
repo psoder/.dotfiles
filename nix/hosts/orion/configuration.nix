@@ -104,6 +104,7 @@
       atuin
       zellij
       fzf
+      tealdeer
 
       hyprshot
       hyprlock
