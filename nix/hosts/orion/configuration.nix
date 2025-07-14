@@ -14,7 +14,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Without the latest kernel it doesn't sleep properly,
+  # with it the wi-fi doesn't work..
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "orion"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
