@@ -108,6 +108,7 @@
       zellij
       fzf
       tealdeer
+      mprocs
 
       hyprshot
       hyprlock
