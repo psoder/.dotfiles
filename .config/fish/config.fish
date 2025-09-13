@@ -15,6 +15,7 @@ if status is-interactive
 	~/.local/bin/mise activate fish | source
 	starship init fish | source
 	atuin init fish | source
+	zoxide init fish --cmd cd | source
 
 	if set -q ZELLIJ
 	else
