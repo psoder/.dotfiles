@@ -120,7 +120,13 @@
 
       rustc
       rustup
+      rust-analyzer
       bun
+      lua-language-server
+      stylua
+      prettierd
+      vscode-langservers-extracted
+      htmx-lsp
 
       spotify
       obsidian
@@ -439,6 +445,7 @@
 
     wofi
     font-awesome
+    inputs.zen-browser.packages."${system}".default
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
