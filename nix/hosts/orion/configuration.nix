@@ -109,6 +109,7 @@
       fzf
       tealdeer
       mprocs
+      zoxide
 
       hyprshot
       hyprlock
