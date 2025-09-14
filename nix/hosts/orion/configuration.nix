@@ -110,6 +110,7 @@
       tealdeer
       mprocs
       zoxide
+      keychain
 
       hyprshot
       hyprlock
