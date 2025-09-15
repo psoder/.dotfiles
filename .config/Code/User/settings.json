@@ -45,7 +45,6 @@
         "editor.selectionBackground": "#135564",
         "editor.selectionHighlightBackground": "#135564"
     },
-    "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
     "window.zoomLevel": 1,
 
@@ -98,7 +97,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": true,
         "markdown": true,
         "scminput": false
@@ -111,14 +110,18 @@
         "editor.defaultFormatter": "redhat.vscode-xml"
     },
     "cSpell.userWords": [
-        "Occurence"
+        "clira",
+        "efac",
+        "efbc",
+        "Occurence",
+        "walle"
     ],
     "explorer.sortOrder": "type",
     "explorer.incrementalNaming": "smart",
     "editor.cursorBlinking": "smooth",
     "editor.cursorSurroundingLines": 3,
     "typescript.tsserver.enableTracing": true,
-    "workbench.colorTheme": "Andromeda",
+    "workbench.colorTheme": "Catppuccin Macchiato",
     "indentRainbow.indicatorStyle": "light",
     "trailing-spaces.deleteModifiedLinesOnly": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
@@ -182,5 +185,10 @@
     },
     "prisma.showPrismaDataPlatformNotification": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.lineNumbers": "relative"
+    "editor.lineNumbers": "relative",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "catppuccin.accentColor": "peach",
+    "catppuccin.italicKeywords": false,
+    "git.blame.statusBarItem.enabled": false,
+    "editor.tabSize": 2
 }
