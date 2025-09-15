@@ -26,7 +26,7 @@ stow -d ~/.dotfiles -t $HOME .
 
 ## Arch install
 ```
-pacman -S extra/stow ghostty fish neovim fd bat eza dust starship git-delta ripgrep ripgrep-all tokei atuin zellij
+pacman -S yay extra/stow ghostty fish neovim fd bat eza dust starship git-delta ripgrep ripgrep-all tokei atuin zellij zoxide
 
 pacman -S docker docker-compose chromium
 
