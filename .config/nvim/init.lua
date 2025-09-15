@@ -485,6 +485,8 @@ require('lazy').setup({
         html = {},
 
         htmx = {},
+
+        opentofu = {},
       }
 
       -- You can add other tools here that you want Mason to install
@@ -538,6 +540,17 @@ require('lazy').setup({
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         javascript = { { 'prettierd', 'prettier' } },
+
+        tf = { "tfmt" },
+        terraform = { "tfmt" },
+        hcl = { "tfmt" },
+      },
+      formatters = {
+        tfmt = {
+          command = "tofu",
+          args = { "fmt", "-" },
+          stdin = true,
+        }
       },
     },
   },
