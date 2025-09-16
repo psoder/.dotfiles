@@ -17,10 +17,6 @@ if status is-interactive
 	atuin init fish | source
 	zoxide init fish --cmd cd | source
 
-	if status --is-interactive
-		keychain --eval --quiet -Q id_ed25519 | source
-	end
-
 	if set -q ZELLIJ
 	else
 		zellij
@@ -37,5 +33,11 @@ if status is-interactive
 	    fish_vi_key_bindings --no-erase insert
 	end
 
+	if status --is-interactive
+	    keychain --quiet id_ed25519
+	    if test -f ~/.keychain/(hostname)-fish
+		source ~/.keychain/(hostname)-fish
+	    end
+	end
 end
 
