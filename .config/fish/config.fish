@@ -1,10 +1,8 @@
 set -gx PATH $PATH ~/.local/bin
-
-
-set -gx PATH $PATH ~/linux/bin
 set -gx PATH $PATH ~/linux/bin
 
 set -gx MANPAGER 'nvim +Man!'
+set -gx EDITOR 'nvim'
 
 alias gs='git status'
 alias dotl='cd ~/.dotfiles'

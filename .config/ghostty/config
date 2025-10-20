@@ -37,6 +37,6 @@ initial-command = fish
 
 window-decoration = none
 theme = Catppuccin Macchiato 
-background-opacity = 0.95
+background-opacity = 0.93
 keybind = ctrl+shift+enter=toggle_fullscreen
 keybind = ctrl+enter=unbind
