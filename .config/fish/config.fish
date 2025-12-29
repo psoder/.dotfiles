@@ -10,7 +10,7 @@ alias ls='eza'
 alias cat='bat'
 
 if status is-interactive
-	~/.local/bin/mise activate fish | source
+	mise activate fish | source
 	starship init fish | source
 	atuin init fish | source
 	zoxide init fish --cmd cd | source
