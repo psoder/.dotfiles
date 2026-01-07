@@ -1,4 +1,5 @@
 set -gx PATH $PATH ~/.local/bin
+set -gx PATH $PATH ~/.bun/bin
 set -gx PATH $PATH ~/linux/bin
 
 set -gx MANPAGER 'nvim +Man!'
