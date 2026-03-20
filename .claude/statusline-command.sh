@@ -56,7 +56,7 @@ fi
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 context_str=""
 if [ -n "$used_pct" ]; then
-    context_str=$(printf "%.0f%%" "$used_pct")
+    context_str=$(LC_NUMERIC=C printf "%.0f%%" "$used_pct")
 fi
 
 # OS icon for Arch Linux (󰣇 U+F0EC7) — Nerd Font required
