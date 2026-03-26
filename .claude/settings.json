@@ -1,4 +1,8 @@
 {
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/psoder/.claude/statusline-command.sh"
+  },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "kotlin-lsp@claude-plugins-official": true,
@@ -7,5 +11,6 @@
     "code-review@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true
-  }
+  },
+  "effortLevel": "medium"
 }
