@@ -1,2 +1,5 @@
 [tools]
+bun = "latest"
+gitui = "latest"
+java = "latest"
 usage = "latest"
