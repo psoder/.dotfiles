@@ -12,5 +12,7 @@
     "feature-dev@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true
   },
-  "effortLevel": "medium"
+  "effortLevel": "medium",
+  "advisorModel": "opus",
+  "tui": "default"
 }
