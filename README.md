@@ -37,7 +37,7 @@ curl https://mise.run | sh
 
 pacman -S spotify-launcher obsidian vlc
 
-pacman -S hyprland wofi swaync hypridle hyprpaper waybar hyprshot hyprlock hyprcursor hyprpolkitagent catppuccin-cursors-macchiato
+pacman -S hyprland swaync hypridle hyprpaper waybar hyprshot hyprlock hyprcursor hyprpolkitagent hyprlauncher catppuccin-cursors-macchiato xdg-desktop-portal-hyprland hyprpwcenter hyprland-qt-support qt5-wayland qt6-wayland
 ```
 
 ```sh
