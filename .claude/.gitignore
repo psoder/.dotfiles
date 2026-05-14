@@ -20,4 +20,5 @@ debug/
 paste-cache/
 statsig/
 tasks/
-
+image-cache/
+mcp-needs-auth-cache.json
