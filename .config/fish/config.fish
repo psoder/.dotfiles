@@ -6,6 +6,31 @@ set -gx PATH $PATH ~/.moon/bin
 set -gx MANPAGER 'nvim +Man!'
 set -gx EDITOR 'nvim'
 
+set -gx NEWT_COLORS '
+root=white,black
+window=white,black
+border=white,black
+shadow=black,black
+title=brightcyan,black
+textbox=white,black
+acttextbox=black,cyan
+button=black,cyan
+actbutton=black,brightcyan
+checkbox=white,black
+actcheckbox=black,cyan
+entry=white,black
+disentry=gray,black
+label=brightcyan,black
+listbox=white,black
+actlistbox=black,cyan
+sellistbox=brightcyan,black
+actsellistbox=black,cyan
+emptyscale=white,gray
+fullscale=white,cyan
+helpline=white,black
+roottext=white,black
+'
+
 alias gs='git status'
 alias dotl='cd ~/.dotfiles'
 alias ls='eza'
