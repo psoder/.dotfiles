@@ -1,24 +1,6 @@
-# Credentials
+!.gitignore
+!CLAUDE.md
+!settings.json
+!statusline-command.sh
 .credentials.json
-
-# Ephemeral runtime data
-history.jsonl
-stats-cache.json
-session-env/
-shell-snapshots/
-cache/
-backups/
-sessions/
-telemetry/
-usage-data/
-file-history/
-plans/
-projects/
-plugins/
-todos/
-debug/
-paste-cache/
-statsig/
-tasks/
-image-cache/
-mcp-needs-auth-cache.json
+*
