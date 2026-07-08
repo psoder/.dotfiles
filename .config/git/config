@@ -8,13 +8,8 @@
 	pager = delta
 
 [user]
-	name = Pontus
+	name = Pontus Söderlund
 	email = 52171526+psoder@users.noreply.github.com
-
-[includeIf "gitdir:~/Clira/*"]
-	[user]
-		name = Pontus Söderlund
-		email = pontus@clira.io
 
 [help]
 	autocorrect = 13
