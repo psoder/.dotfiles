@@ -27,7 +27,7 @@ stow -d ~/.dotfiles -t $HOME .
 ## Arch install
 
 ```sh
-pacman -S yay extra/stow ghostty fish neovim fd bat eza dust starship git-delta ripgrep ripgrep-all tokei atuin zellij zoxide inetutils keychain zen-browser-bin sudo mise yazi wl-clipboard openssh tealdeer mprocs watchexec
+pacman -S yay extra/stow ghostty fish neovim fd bat eza dust starship git-delta ripgrep ripgrep-all tokei atuin zellij zoxide inetutils keychain zen-browser-bin sudo mise yazi wl-clipboard openssh tealdeer mprocs watchexec xdg-terminal-exec
 
 pacman -S brightnessctl networkmanager pipewire wireplumber pwvucontrol
 

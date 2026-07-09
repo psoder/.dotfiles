@@ -1,38 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "mcp__laravel-boost__last-error",
       "Bash(grep:*)",
       "Bash(xargs ls:*)",
-      "mcp__laravel-boost__application-info",
-      "mcp__laravel-boost__search-docs",
-      "mcp__laravel-boost__list-routes",
       "Bash(find:*)",
-      "mcp__laravel-boost__get-config",
       "Bash(ls:*)",
-      "mcp__laravel-boost__database-schema",
-      "Bash(bunx nx run:*)",
-      "mcp__laravel-boost__database-query",
-      "mcp__laravel-boost__read-log-entries",
       "Bash(git log:*)",
-      "Bash(cat:*)",
-      "Bash(while IFS= read -r f)",
-      "Bash(do if [ -f \"$f\" ])",
-      "Bash(! grep -q 'use Clira\\\\\\\\Foundation\\\\\\\\Timestamp;' \"$f\")",
-      "Bash(then echo \"$f\")",
-      "Bash(fi)",
-      "Bash(done)",
-      "Bash(git mv:*)",
-      "Bash(./vendor/bin/sail php vendor/bin/phpstan:*)",
-      "Bash(./vendor/bin/sail exec -u sail laravel.test php vendor/bin/phpstan:*)",
-      "Bash(./vendor/bin/sail exec:*)",
-      "Bash(bun run:*)",
-      "Bash(/home/psoder/.claude/plans/ticklish-splashing-feigenbaum-agent-aa847ffb1bac56c0b.md:*)",
-      "Bash(vendor/bin/sail exec:*)",
-      "Bash(just analyze:*)",
-      "Bash(just api test *)"
-    ],
-    "defaultMode": "auto"
+      "Bash(cat:*)"
+    ]
   },
   "statusLine": {
     "type": "command",
@@ -52,5 +27,6 @@
   "tui": "default",
   "autoMemoryEnabled": true,
   "editorMode": "vim",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "model": "sonnet"
 }
