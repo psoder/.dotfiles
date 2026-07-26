@@ -1,0 +1,20 @@
+[appearance]
+style = "Solid"
+opacity = 0.9
+
+success_color = "#a6e3a1"
+warning_color = "#f9e2af"
+danger_color = "#f38ba8"
+text_color = "#cdd6f4"
+
+workspace_colors = [ "#fab387", "#b4befe", "#cba6f7" ]
+
+[appearance.primary_color]
+base = "#c6a0f6"
+text = "#24273a"
+
+[appearance.background_color]
+base = "#24273a"
+weak = "#363a4f"
+strong = "#494d64"
+

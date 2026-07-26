@@ -23,8 +23,11 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("waybar")
+    hl.exec_cmd("ashell")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
+
+    hl.exec_cmd("[workspace 2] " .. terminal)
+    hl.exec_cmd("[workspace 10 silent] zen-browser")
 end)
 
 
@@ -112,7 +115,7 @@ hl.config({
         kb_rules   = "",
 
         follow_mouse = 1,
-        sensitivity  = -0.5,
+        sensitivity  = -0.25,
 
         touchpad = {
             natural_scroll = true,
@@ -155,7 +158,7 @@ hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "a
 
 hl.device({
     name        = "epic-mouse-v1",
-    sensitivity = -0.5,
+    sensitivity = 0,
 })
 
 
@@ -167,7 +170,7 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + Q",        hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C",        hl.dsp.window.close())
-hl.bind("SUPER + SHIFT + escape", hl.dsp.exit())
+hl.bind("SUPER + SHIFT + escape", hl.dsp.exec_cmd("hyprshutdown"))
 hl.bind(mainMod .. " + E",        hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V",        hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R",        hl.dsp.exec_cmd(menu))
