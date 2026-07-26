@@ -1,0 +1,6 @@
+[terminal]
+vt = 1
+
+[default_session]
+command = "cagebreak -e -c /etc/greetd/cagebreak-greeter-config"
+user = "greeter"

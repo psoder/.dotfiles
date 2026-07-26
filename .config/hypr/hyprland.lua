@@ -13,7 +13,7 @@ end
 local terminal    = "ghostty -e fish"
 local fileManager = "ghostty -e yazi"
 local menu        = "hyprlauncher -d"
-
+local shutdown    = "hyprshutdown -t 'Shutting down...'"
 
 -------------------
 ---- AUTOSTART ----
@@ -170,7 +170,7 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + Q",        hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C",        hl.dsp.window.close())
-hl.bind("SUPER + SHIFT + escape", hl.dsp.exec_cmd("hyprshutdown"))
+hl.bind("SUPER + SHIFT + escape", hl.dsp.exec_cmd(shutdown))
 hl.bind(mainMod .. " + E",        hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V",        hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R",        hl.dsp.exec_cmd(menu))
