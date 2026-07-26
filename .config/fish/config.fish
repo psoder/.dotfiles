@@ -44,7 +44,7 @@ if status is-interactive
 
 	if set -q ZELLIJ
 	else
-		zellij
+		zellij attach -c default
 	end
 
 	function fish_user_key_bindings
