@@ -1,13 +1,13 @@
 // VS Code settings
-
 {
     // Editor
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.formatOnSaveMode": "file",
     "editor.suggestSelection": "first",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.quickSuggestions": {
         "strings": true
@@ -18,7 +18,6 @@
         "ä": true,
         "ö": true
     },
-
     // Eh
     "files.trimFinalNewlines": true,
     "files.exclude": {
@@ -35,7 +34,6 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "git.autofetch": true,
     "git.confirmSync": false,
-
     // Workbench
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editorAssociations": {
@@ -47,11 +45,9 @@
     },
     "workbench.startupEditor": "none",
     "window.zoomLevel": 1,
-
     // Extensions
     // Redhat
     "redhat.telemetry.enabled": false,
-
     // Markdownlint
     "markdownlint.config": {
         "default": true,
@@ -59,13 +55,11 @@
         "MD033": false
     },
     "markdownlint.focusMode": false,
-
     // Prettier
     "prettier.enable": true,
     "prettier.tabWidth": 4,
     "prettier.printWidth": 100,
     "prettier.trailingComma": "es5",
-
     "[kotlin]": {
         "editor.defaultFormatter": "fwcd.kotlin"
     },
@@ -92,9 +86,6 @@
     },
     "tailwindCSS.includeLanguages": {
         "plaintext": "html"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "github.copilot.enable": {
         "*": false,
@@ -190,5 +181,34 @@
     "catppuccin.accentColor": "peach",
     "catppuccin.italicKeywords": false,
     "git.blame.statusBarItem.enabled": false,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "docker.extension.enableComposeLanguageServer": false,
+    "json.schemaDownload.trustedDomains": {
+        "https://schemastore.azurewebsites.net/": true,
+        "https://raw.githubusercontent.com/microsoft/vscode/": true,
+        "https://raw.githubusercontent.com/devcontainers/spec/": true,
+        "https://www.schemastore.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://json-schema.org/": true,
+        "https://developer.microsoft.com/json-schemas/": true
+    },
+    "chat.disableAIFeatures": true,
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    }
 }
+

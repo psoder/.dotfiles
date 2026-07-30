@@ -7,7 +7,11 @@
       "Bash(ls:*)",
       "Bash(git log:*)",
       "Bash(cat:*)"
-    ]
+    ],
+    "deny": [
+      "Read(**/secrets.tfvars)"
+    ],
+    "defaultMode": "plan"
   },
   "statusLine": {
     "type": "command",
