@@ -3,6 +3,7 @@ set -gx PATH $PATH ~/.bun/bin
 set -gx PATH $PATH ~/.cargo/bin
 set -gx PATH $PATH ~/linux/bin
 set -gx PATH $PATH ~/.moon/bin
+set -gx PATH $PATH ~/.local/share/mise/shims
 
 set -gx MANPAGER 'nvim +Man!'
 set -gx EDITOR 'nvim'

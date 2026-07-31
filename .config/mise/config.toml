@@ -2,4 +2,8 @@
 bun = "latest"
 gitui = "latest"
 java = "latest"
+lua-language-server = "latest"
+node = "latest"
+stylua = "latest"
+tree-sitter = "latest"
 usage = "latest"
