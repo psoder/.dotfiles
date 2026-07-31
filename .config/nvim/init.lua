@@ -1,25 +1,14 @@
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
--- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
--- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
-
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = 'a' -- Mouse mode
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -28,28 +17,22 @@ vim.opt.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
-
--- Enable break indent
 vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
-
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
--- Decrease update time
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 
--- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
@@ -71,7 +54,6 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
--- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -96,15 +78,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
---
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -157,9 +132,6 @@ require('lazy').setup({
   --
   --  This is equivalent to:
   --    require('Comment').setup({})
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
@@ -243,9 +215,6 @@ require('lazy').setup({
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
-
-      -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- [[ Configure Telescope ]]
@@ -686,30 +655,42 @@ require('lazy').setup({
     end,
   },
 
-  -- { -- You can easily change to a different colorscheme.
-  --   -- Change the name of the colorscheme plugin below, and then
-  --   -- change the command in the config to whatever the name of that colorscheme is.
-  --   --
-  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  --   'folke/tokyonight.nvim',
-  --   priority = 1000, -- Make sure to load this before all the other start plugins.
-  --   init = function()
-  --     -- Load the colorscheme here.
-  --     -- Like many other themes, this one has different styles, and you could load
-  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  --     -- vim.cmd.colorscheme 'slate'
-  --
-  --     -- You can configure highlights by doing something like:
-  --     -- vim.cmd.hi 'Comment gui=none'
-  --   end,
-  -- },
-
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
-  { -- Collection of various small independent plugins/modules
-    'echasnovski/mini.nvim',
+  {
+    'nvim-mini/mini.nvim',
+    -- Load before other startup plugins so mini.icons' devicons mock is in
+    -- place before telescope tries to require('nvim-web-devicons').
+    priority = 100,
     config = function()
+      require('mini.comment').setup()
+      require('mini.pairs').setup()
+      require('mini.hipatterns').setup {
+        highlighters = {
+          fixme = { pattern = 'FIXME', group = 'MiniHipatternsFixme' },
+          hack = { pattern = 'HACK', group = 'MiniHipatternsHack' },
+          todo = { pattern = 'TODO', group = 'MiniHipatternsTodo' },
+          note = { pattern = 'NOTE', group = 'MiniHipatternsNote' },
+        },
+      }
+      require('mini.icons').setup()
+      MiniIcons.mock_nvim_web_devicons()
+
+      -- Indent scope guide (highlights the current indent scope, not every level)
+      require('mini.indentscope').setup {
+        draw = { animation = require('mini.indentscope').gen_animation.none() },
+      }
+
+      -- File explorer
+      require('mini.files').setup {
+        windows = {
+          preview = true,
+        },
+      }
+      vim.keymap.set('n', '<leader>ft', function()
+        if not MiniFiles.close() then
+          MiniFiles.open(vim.api.nvim_buf_get_name(0))
+        end
+      end, { desc = 'Toggle file explorer' })
+
       -- Better Around/Inside textobjects
       --
       -- Examples:
@@ -796,24 +777,7 @@ require('lazy').setup({
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
-  require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  { import = 'custom.plugins' },
+  { import = 'plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
