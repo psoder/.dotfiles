@@ -747,6 +747,7 @@ require('lazy').setup({
         'rust',
         'nix',
         'gitcommit',
+        'fish',
       }
       require('nvim-treesitter').install(ensure_installed)
       vim.api.nvim_create_autocmd('FileType', {

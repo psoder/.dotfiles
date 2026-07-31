@@ -44,6 +44,11 @@ if status is-interactive
 	atuin init fish | source
 	zoxide init fish --cmd cd | source
 
+	keychain --quiet id_ed25519
+	if test -f ~/.keychain/(hostname)-fish
+		source ~/.keychain/(hostname)-fish
+	end
+
 	if set -q ZELLIJ
 	else
 		zellij attach -c default
@@ -58,13 +63,6 @@ if status is-interactive
 	    # resetting all bindings.
 	    # The argument specifies the initial mode (insert, "default" or visual).
 	    fish_vi_key_bindings --no-erase insert
-	end
-
-	if status --is-interactive
-	    keychain --quiet id_ed25519
-	    if test -f ~/.keychain/(hostname)-fish
-		source ~/.keychain/(hostname)-fish
-	    end
 	end
 end
 
