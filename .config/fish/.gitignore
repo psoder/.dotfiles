@@ -1,2 +1,3 @@
-completions
+completions/*
+!completions/mise.fish
 fish_variables
