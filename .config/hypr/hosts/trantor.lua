@@ -5,4 +5,5 @@ hl.monitor {
   scale = 'auto',
 }
 
-hl.env('HYPR_WALLPAPER', '~/Pictures/Wallpapers/walls-catppuccin-mocha/city-horizon.jpg')
+hl.env('HYPR_WALLPAPER', '~/Pictures/wallpapers/walls-catppuccin-mocha/city-horizon.jpg')
+hl.env('WALLPAPER_DIR', '~/Pictures/wallpapers')

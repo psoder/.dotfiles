@@ -1,0 +1,10 @@
+[Unit]
+Description=Hourly Hyprland wallpaper rotation
+
+[Timer]
+OnCalendar=hourly
+OnStartupSec=1min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
