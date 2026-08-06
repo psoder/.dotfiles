@@ -21,6 +21,9 @@ vim.opt.breakindent = true
 
 vim.opt.colorcolumn = '120'
 
+vim.opt.spelllang = 'en,sv'
+vim.opt.spellfile = vim.fn.stdpath 'config' .. '/spell/en.utf-8.add'
+
 -- Save undo history
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -70,6 +73,10 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+vim.keymap.set('n', '<leader>ts', function()
+  vim.wo.spell = not vim.wo.spell
+end, { desc = '[T]oggle [S]pell' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -94,6 +101,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
     vim.hl.on_yank()
+  end,
+})
+
+local nospell = vim.api.nvim_create_augroup('kickstart-nospell', { clear = true })
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = nospell,
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
+vim.api.nvim_create_autocmd('FileType', {
+  group = nospell,
+  pattern = { 'help', 'checkhealth', 'lazy' },
+  callback = function()
+    vim.opt_local.spell = false
   end,
 })
 
