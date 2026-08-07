@@ -23,7 +23,6 @@ git submodule update --init --recursive
 stow -d ~/.dotfiles -t $HOME .
 ```
 
-
 ## Arch install
 
 ```sh
@@ -84,6 +83,9 @@ yay -S hyprland \
     kitty \
     greetd \
     sysc-greet-cagebreak
+
+
+yay -S bash-language-server
 ```
 
 ```sh

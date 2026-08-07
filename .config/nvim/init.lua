@@ -354,6 +354,7 @@ require('lazy').setup({
         htmx = {},
         opentofu = {},
         marksman = {},
+        bashls = {},
       }
 
       for server_name, _ in pairs(servers) do
