@@ -69,6 +69,23 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 --   highlight NonText ctermbg=none
 -- ]]
 
+-- Diagnostics
+vim.diagnostic.config {
+  severity_sort = true,
+  signs = vim.g.have_nerd_font and {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '󰅚 ',
+      [vim.diagnostic.severity.WARN] = '󰀪 ',
+      [vim.diagnostic.severity.INFO] = '󰋽 ',
+      [vim.diagnostic.severity.HINT] = '󰌶 ',
+    },
+  } or {},
+  virtual_text = {
+    source = 'if_many',
+    spacing = 2,
+  },
+}
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -350,9 +367,6 @@ require('lazy').setup({
             Lua = { completion = { callSnippet = 'Replace' } },
           },
         },
-        html = {},
-        htmx = {},
-        opentofu = {},
         marksman = {},
         bashls = {},
       }

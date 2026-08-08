@@ -4,3 +4,5 @@ hl.monitor {
   position = 'auto',
   scale = 'auto',
 }
+
+hl.env('WALLPAPER_DIR', '~/Pictures/wallpapers')

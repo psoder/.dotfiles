@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HOSTS_LUA="$HOME/.dotfiles/.config/hypr/hosts/$(hostname).lua"
+HOSTS_DIR="$HOME/.dotfiles/.config/hypr/hosts"
+HOSTS_LUA="$HOSTS_DIR/$(hostname).lua"
 if [[ ! -f "$HOSTS_LUA" ]]; then
-  echo "no host config at $HOSTS_LUA, cannot determine wallpaper dir" >&2
+  HOSTS_LUA="$HOSTS_DIR/default.lua"
+fi
+if [[ ! -f "$HOSTS_LUA" ]]; then
+  echo "no host config at $HOSTS_DIR, cannot determine wallpaper dir" >&2
   exit 1
 fi
 OVERRIDE=$(grep -oP "hl\.env\('WALLPAPER_DIR',\s*'\K[^']+" "$HOSTS_LUA" || true)
@@ -23,8 +27,8 @@ mkdir -p "$STATE_DIR"
 exec 9>"$LOCK_FILE"
 flock -n 9 || exit 0
 
-if ! hyprctl hyprpaper listactive >/dev/null 2>&1; then
-  echo "hyprpaper not reachable, skipping" >&2
+if ! hyprctl monitors -j >/dev/null 2>&1; then
+  echo "hyprland not reachable, skipping" >&2
   exit 0
 fi
 
@@ -80,15 +84,28 @@ if [[ -z "$NEXT" ]]; then
   exit 1
 fi
 
-ln -sfn "$NEXT" "$CURRENT_LINK"
+mapfile -t MONITORS < <(hyprctl monitors -j | jq -r '.[] | select(.disabled == false) | .name')
 
-mapfile -t ACTIVE < <(hyprctl hyprpaper listactive)
+if (( ${#MONITORS[@]} == 0 )); then
+  echo "no enabled monitors reported by hyprctl" >&2
+  exit 1
+fi
 
-for line in "${ACTIVE[@]}"; do
-  MON="${line%%:*}"
-  MON="${MON// /}"
-  [[ -z "$MON" ]] && continue
-  hyprctl hyprpaper wallpaper "$MON,$NEXT" >/dev/null
+# hyprctl prints "error: ..." on failure; don't trust the exit status alone.
+FAILED=0
+for MONITOR in "${MONITORS[@]}"; do
+  if ! OUT=$(hyprctl hyprpaper wallpaper "$MONITOR,$NEXT" 2>&1) || [[ "$OUT" == error:* || "$OUT" == *"err:"* ]]; then
+    echo "failed to set wallpaper on $MONITOR: $OUT" >&2
+    FAILED=1
+  fi
 done
 
+if (( FAILED )); then
+  echo "wallpaper NOT rotated; leaving $CURRENT_LINK untouched" >&2
+  exit 1
+fi
+
+ln -sfn "$NEXT" "$CURRENT_LINK"
 echo "$NEXT" > "$LAST_FILE"
+
+echo "wallpaper set to $NEXT on ${MONITORS[*]}"

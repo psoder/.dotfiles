@@ -5,7 +5,6 @@ hl.monitor {
   scale = 'auto',
 }
 
-hl.env('HYPR_WALLPAPER', '~/Pictures/wallpapers/walls-catppuccin-mocha/astronaut.png')
 hl.env('WALLPAPER_DIR', '~/Pictures/wallpapers')
 
 hl.gesture {
