@@ -298,9 +298,14 @@ require('lazy').setup({
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
+          -- NOTE: Neovim 0.11+ ships default LSP maps under the `gr` prefix
+          -- (grr/gri/grt/grn/gra/grx). Mapping bare `gr` here would shadow that
+          -- whole prefix and make every one of them wait out `timeoutlen`, so
+          -- override the individual defaults with the Telescope pickers instead.
           map_key('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-          map_key('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-          map_key('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map_key('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          map_key('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map_key('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
@@ -359,7 +364,16 @@ require('lazy').setup({
 
       -- NOTE: See `:help lspconfig-all` for a list of all the pre-configured LSPs
       local servers = {
-        rust_analyzer = {},
+        rust_analyzer = {
+          -- Bypass the `~/.cargo/bin/rust-analyzer` rustup proxy. In a project
+          -- with a `rust-toolchain.toml` pinning a toolchain that lacks the
+          -- rust-analyzer component, the proxy falls back to the next
+          -- `rust-analyzer` on PATH -- which is a mise shim that re-execs the
+          -- proxy, so rustup dies with "infinite recursion detected" and no
+          -- server ever attaches. Pinning to stable sidesteps the fallback;
+          -- cargo still honours the project's own toolchain.
+          cmd = { 'rustup', 'run', 'stable', 'rust-analyzer' },
+        },
         lua_ls = {
           cmd = { 'lua-language-server' },
           filetypes = { 'lua' },
@@ -410,6 +424,8 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         javascript = { 'oxfmt', stop_after_first = true },
+        typescript = { 'oxfmt', stop_after_first = true },
+        json = { 'oxfmt', stop_after_first = true },
         tf = { 'tfmt' },
         terraform = { 'tfmt' },
         hcl = { 'tfmt' },
