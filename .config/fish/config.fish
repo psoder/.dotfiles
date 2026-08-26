@@ -1,7 +1,7 @@
 fish_add_path -g ~/.local/bin ~/.bun/bin ~/.cargo/bin ~/linux/bin ~/.moon/bin ~/.local/share/mise/shims
 
 set -gx MANPAGER 'nvim +Man!'
-set -gx EDITOR 'nvim'
+set -gx EDITOR nvim
 
 set -gx NEWT_COLORS '
 root=white,black
@@ -34,30 +34,28 @@ alias ls='eza'
 alias cat='bat'
 
 if status is-interactive
-	mise activate fish | source
-	starship init fish | source
-	atuin init fish | source
-	zoxide init fish --cmd cd | source
+    mise activate fish | source
+    starship init fish | source
+    atuin init fish | source
+    zoxide init fish --cmd cd | source
 
-	keychain --quiet id_ed25519
-	if test -f ~/.keychain/(hostname)-fish
-		source ~/.keychain/(hostname)-fish
-	end
+    if not set -q ZELLIJ
+        keychain --quiet id_ed25519
+        if test -f ~/.keychain/(hostname)-fish
+            source ~/.keychain/(hostname)-fish
+        end
 
-	if set -q ZELLIJ
-	else
-		zellij attach -c default
-	end
+        zellij attach -c default
+    end
 
-	function fish_user_key_bindings
-	    # Execute this once per mode that emacs bindings should be used in
-	    fish_default_key_bindings -M insert
+    function fish_user_key_bindings
+        # Execute this once per mode that emacs bindings should be used in
+        fish_default_key_bindings -M insert
 
-	    # Then execute the vi-bindings so they take precedence when there's a conflict.
-	    # Without --no-erase fish_vi_key_bindings will default to
-	    # resetting all bindings.
-	    # The argument specifies the initial mode (insert, "default" or visual).
-	    fish_vi_key_bindings --no-erase insert
-	end
+        # Then execute the vi-bindings so they take precedence when there's a conflict.
+        # Without --no-erase fish_vi_key_bindings will default to
+        # resetting all bindings.
+        # The argument specifies the initial mode (insert, "default" or visual).
+        fish_vi_key_bindings --no-erase insert
+    end
 end
-

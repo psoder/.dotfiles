@@ -430,6 +430,7 @@ require('lazy').setup({
         terraform = { 'tfmt' },
         hcl = { 'tfmt' },
         markdown = { 'markdownlint' },
+        fish = { 'fish_indent' },
       },
       formatters = {
         tfmt = {
