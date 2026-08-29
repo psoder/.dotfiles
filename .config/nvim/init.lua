@@ -373,6 +373,11 @@ require('lazy').setup({
           -- server ever attaches. Pinning to stable sidesteps the fallback;
           -- cargo still honours the project's own toolchain.
           cmd = { 'rustup', 'run', 'stable', 'rust-analyzer' },
+          settings = {
+            ['rust-analyzer'] = {
+              checkOnSave = { command = 'clippy' },
+            },
+          },
         },
         lua_ls = {
           cmd = { 'lua-language-server' },
@@ -484,6 +489,33 @@ require('lazy').setup({
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      local kind_priority = {
+        [cmp.lsp.CompletionItemKind.Field] = 1,
+        [cmp.lsp.CompletionItemKind.Property] = 1,
+        [cmp.lsp.CompletionItemKind.Variable] = 2,
+        [cmp.lsp.CompletionItemKind.Method] = 3,
+        [cmp.lsp.CompletionItemKind.Function] = 3,
+        [cmp.lsp.CompletionItemKind.Constructor] = 3,
+        [cmp.lsp.CompletionItemKind.Struct] = 4,
+        [cmp.lsp.CompletionItemKind.Class] = 4,
+        [cmp.lsp.CompletionItemKind.Interface] = 4,
+        [cmp.lsp.CompletionItemKind.Module] = 5,
+        [cmp.lsp.CompletionItemKind.Enum] = 5,
+        [cmp.lsp.CompletionItemKind.EnumMember] = 5,
+        [cmp.lsp.CompletionItemKind.Constant] = 5,
+        [cmp.lsp.CompletionItemKind.Keyword] = 6,
+        [cmp.lsp.CompletionItemKind.Snippet] = 99,
+        [cmp.lsp.CompletionItemKind.Text] = 100,
+      }
+
+      local function compare_kind_priority(entry1, entry2)
+        local kind1 = kind_priority[entry1:get_kind()] or 50
+        local kind2 = kind_priority[entry2:get_kind()] or 50
+        if kind1 ~= kind2 then
+          return kind1 < kind2
+        end
+      end
+
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -491,6 +523,20 @@ require('lazy').setup({
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
+        sorting = {
+          priority_weight = 2,
+          comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            compare_kind_priority,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.locality,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+          },
+        },
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
@@ -612,9 +658,30 @@ require('lazy').setup({
       --
       -- Examples:
       --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [']quote
+      --  - yiNq - [Y]ank [I]nside [N]ext [']quote
       --  - ci'  - [C]hange [I]nside [']quote
-      require('mini.ai').setup { n_lines = 500 }
+      --  - vaf  - [V]isually select [A]round [F]unction definition (treesitter)
+      local ai = require 'mini.ai'
+      ai.setup {
+        n_lines = 500,
+        custom_textobjects = {
+          -- Note: overrides mini's builtin `f` (function *call*) with function
+          -- *definition*. `ci(` still covers the call-argument case.
+          f = ai.gen_spec.treesitter { a = '@function.outer', i = '@function.inner' },
+          c = ai.gen_spec.treesitter { a = '@class.outer', i = '@class.inner' },
+          o = ai.gen_spec.treesitter {
+            a = { '@conditional.outer', '@loop.outer' },
+            i = { '@conditional.inner', '@loop.inner' },
+          },
+        },
+        mappings = {
+          -- NOTE: `:h MiniAi-default-an-in`.
+          around_next = 'aN',
+          inside_next = 'iN',
+          around_last = 'aL',
+          inside_last = 'iL',
+        },
+      }
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
@@ -687,8 +754,17 @@ require('lazy').setup({
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
-    --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
+    --    - Incremental selection: now built into Neovim, see `:help treesitter-incremental-selection`
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+  {
+    -- Treesitter textobject *queries* (@function.outer, @class.inner, ...).
+    -- Only the queries are used; mini.ai reads them via `vim.treesitter.query.get()`,
+    -- so none of this plugin's own modules (select/move/swap) are needed.
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    branch = 'main',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    lazy = false,
   },
   { -- Show your current code context (function/class) pinned at the top
     'nvim-treesitter/nvim-treesitter-context',
