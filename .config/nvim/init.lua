@@ -56,6 +56,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Start with all folds open (treesitter foldexpr is enabled per-buffer below)
+vim.opt.foldlevelstart = 99
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -745,6 +748,7 @@ require('lazy').setup({
 
           local ok = pcall(vim.treesitter.start)
           if ok then
+            vim.wo[0][0].foldmethod = 'expr'
             vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
             vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
           end
