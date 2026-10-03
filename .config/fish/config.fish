@@ -41,10 +41,10 @@ if status is-interactive
 
     if not set -q ZELLIJ
         keychain --quiet id_ed25519
-        if test -f ~/.keychain/(hostname)-fish
-            source ~/.keychain/(hostname)-fish
-        end
+    end
+    keychain env --shell fish | source
 
+    if not set -q ZELLIJ
         zellij attach -c default
     end
 

@@ -1,0 +1,11 @@
+[[mgr.prepend_keymap]]
+on   = [ "g", "s"]
+run  = "cd sftp://arrakis//srv"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "p" ]
+run  = "cd ~/Pictures"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "P" ]
+run  = "cd ~/Projects"

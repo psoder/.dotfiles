@@ -1,0 +1,4 @@
+[sftp.arrakis]
+host = "arrakis"
+user = "psoder"
+port = 22
