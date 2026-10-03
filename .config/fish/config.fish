@@ -43,6 +43,9 @@ if status is-interactive
         keychain --quiet id_ed25519
     end
     keychain env --shell fish | source
+    if set -q XDG_RUNTIME_DIR SSH_AUTH_SOCK; and test -S "$SSH_AUTH_SOCK"
+        ln -sfnT "$SSH_AUTH_SOCK" "$XDG_RUNTIME_DIR/keychain-agent.sock"
+    end
 
     if not set -q ZELLIJ
         zellij attach -c default

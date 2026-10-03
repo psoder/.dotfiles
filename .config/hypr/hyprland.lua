@@ -41,6 +41,7 @@ hl.env('QT_QPA_PLATFORMTHEME', 'hyprqt6engine')
 hl.env('TERMINAL', 'ghostty')
 hl.env('EDITOR', 'nvim')
 hl.env('VISUAL', 'nvim')
+hl.env('SSH_AUTH_SOCK', os.getenv('XDG_RUNTIME_DIR') .. '/keychain-agent.sock')
 
 hl.exec_cmd 'gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"'
 
