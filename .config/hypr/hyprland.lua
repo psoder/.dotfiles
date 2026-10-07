@@ -10,6 +10,7 @@ end
 ---------------------
 
 local terminal = 'ghostty -e fish'
+local calendar = 'thunderbird -calendar'
 local fileManager = 'ghostty -e yazi'
 local menu = 'hyprlauncher -d'
 local shutdown = "hyprshutdown -t 'Shutting down...'"
@@ -41,7 +42,7 @@ hl.env('QT_QPA_PLATFORMTHEME', 'hyprqt6engine')
 hl.env('TERMINAL', 'ghostty')
 hl.env('EDITOR', 'nvim')
 hl.env('VISUAL', 'nvim')
-hl.env('SSH_AUTH_SOCK', os.getenv('XDG_RUNTIME_DIR') .. '/keychain-agent.sock')
+hl.env('SSH_AUTH_SOCK', os.getenv 'XDG_RUNTIME_DIR' .. '/keychain-agent.sock')
 
 hl.exec_cmd 'gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"'
 
@@ -164,6 +165,7 @@ hl.device {
 local mainMod = 'SUPER'
 
 hl.bind(mainMod .. ' + Q', hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. ' + M', hl.dsp.exec_cmd(calendar))
 hl.bind(mainMod .. ' + C', hl.dsp.window.close())
 hl.bind('SUPER + SHIFT + escape', hl.dsp.exec_cmd(shutdown))
 hl.bind(mainMod .. ' + E', hl.dsp.exec_cmd(fileManager))
