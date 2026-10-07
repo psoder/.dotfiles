@@ -1,4 +1,4 @@
-fish_add_path -g ~/.local/bin ~/.bun/bin ~/.cargo/bin ~/linux/bin ~/.moon/bin ~/.local/share/mise/shims
+fish_add_path -g ~/.local/bin ~/.bun/bin ~/.cargo/bin ~/linux/bin ~/.local/share/mise/shims
 
 set -gx MANPAGER 'nvim +Man!'
 set -gx EDITOR nvim
@@ -32,6 +32,18 @@ alias gs='git status'
 alias dotl='cd ~/.dotfiles'
 alias ls='eza'
 alias cat='bat'
+alias jsontidy="wl-paste | jq '.' | wl-copy; or wl-paste | wl-copy"
+
+function jsontidyfile
+    set file $argv[1]
+
+    if jq '.' "$file" >"$file.tmp"
+        mv "$file.tmp" "$file"
+    else
+        rm -f "$file.tmp"
+        return 1
+    end
+end
 
 if status is-interactive
     mise activate fish | source
