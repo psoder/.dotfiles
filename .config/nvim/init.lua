@@ -491,6 +491,7 @@ require('lazy').setup({
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+      require('luasnip.loaders.from_lua').lazy_load { paths = vim.fn.stdpath 'config' .. '/lua/snippets' }
 
       local kind_priority = {
         [cmp.lsp.CompletionItemKind.Field] = 1,
