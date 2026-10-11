@@ -1,0 +1,36 @@
+[general]
+status_path = "~/.vdirsyncer/status/"
+
+[pair contacts]
+a = "contacts_local"
+b = "contacts_remote"
+collections = ["from a", "from b"]
+
+[storage contacts_local]
+type = "filesystem"
+path = "~/.contacts/"
+fileext = ".vcf"
+
+[storage contacts_remote]
+type = "carddav"
+
+url = "http://arrakis.tail5a0022.ts.net:5232/psoder/48303521-a3ff-db2b-1730-8e6a4d24e119"
+username = "psoder"
+password.fetch = ["command", "sops", "--decrypt", "--extract", "[\"xandikos_password\"]", "~/.secrets/secrets.yaml"]
+
+[pair cal_personal]
+a = "cal_personal_local"
+b = "cal_personal_remote"
+collections = ["from a", "from b"]
+
+[storage cal_personal_local]
+type = "filesystem"
+path = "~/.calendar/"
+fileext = ".vcf"
+
+[storage cal_personal_remote]
+type = "caldav"
+item_types = ["VTODO", "VEVENT"]
+url = "http://arrakis.tail5a0022.ts.net:5232/psoder/cpsoederlund%40gmail.com/"
+username = "psoder"
+password.fetch = ["command", "sops", "--decrypt", "--extract", "[\"xandikos_password\"]", "~/.secrets/secrets.yaml"]

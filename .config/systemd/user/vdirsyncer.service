@@ -1,0 +1,6 @@
+[Unit]
+Description=Sync contacts and calendars using vdirsyncer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/vdirsyncer sync

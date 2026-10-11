@@ -1,4 +1,5 @@
 [tools]
+age = "latest"
 bun = "latest"
 gitui = "latest"
 java = "latest"
@@ -7,6 +8,7 @@ marksman = "latest"
 node = "latest"
 oxfmt = "latest"
 shellcheck = "latest"
+sops = "latest"
 stylua = "latest"
 tree-sitter = "latest"
 usage = "latest"

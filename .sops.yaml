@@ -1,0 +1,7 @@
+keys:
+  - &psoder age1kzhkzftq8anljr5egfsgt8zrdm2fxu2d9mzdtusef2cmcq0eqa0qgqjfzu
+creation_rules:
+  - path_regex: secrets/[^/]+\.*$
+    key_groups:
+      - age:
+        - *psoder 
