@@ -375,7 +375,7 @@ require('lazy').setup({
           -- proxy, so rustup dies with "infinite recursion detected" and no
           -- server ever attaches. Pinning to stable sidesteps the fallback;
           -- cargo still honours the project's own toolchain.
-          cmd = { 'rustup', 'run', 'stable', 'rust-analyzer' },
+          cmd = { 'rustup', 'run', 'nightly', 'rust-analyzer' },
           settings = {
             ['rust-analyzer'] = {
               checkOnSave = { command = 'clippy' },
@@ -434,6 +434,7 @@ require('lazy').setup({
         javascript = { 'oxfmt', stop_after_first = true },
         typescript = { 'oxfmt', stop_after_first = true },
         json = { 'oxfmt', stop_after_first = true },
+        toml = { 'oxfmt' },
         tf = { 'tfmt' },
         terraform = { 'tfmt' },
         hcl = { 'tfmt' },
