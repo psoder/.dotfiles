@@ -34,6 +34,8 @@ alias ls='eza'
 alias cat='bat'
 alias jsontidy="wl-paste | jq '.' | wl-copy; or wl-paste | wl-copy"
 
+set -g fish_greeting ""
+
 function jsontidyfile
     set file $argv[1]
 
