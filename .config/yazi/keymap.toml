@@ -1,11 +1,27 @@
 [[mgr.prepend_keymap]]
-on   = [ "g", "s"]
-run  = "cd sftp://arrakis//srv"
+on = ["g", "s"]
+run = "cd sftp://arrakis//srv"
 
 [[mgr.prepend_keymap]]
-on   = [ "g", "p" ]
-run  = "cd ~/Pictures"
+on = ["g", "p"]
+run = "cd ~/Pictures"
 
 [[mgr.prepend_keymap]]
-on   = [ "g", "P" ]
-run  = "cd ~/Projects"
+on = ["g", "P"]
+run = "cd ~/Projects"
+
+[[mgr.prepend_keymap]]
+on = ["g", "a"]
+run = "cd /mnt/data"
+
+[[mgr.prepend_keymap]]
+on = ["g", "m"]
+run = "cd /mnt/media"
+
+[[mgr.prepend_keymap]]
+on = ["g", "M"]
+run = "cd /mnt"
+
+[[mgr.prepend_keymap]]
+on = ["g", "/"]
+run = "cd /"

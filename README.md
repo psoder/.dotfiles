@@ -53,8 +53,10 @@ pacman -S yay extra/stow \
     mprocs \
     watchexec \
     xdg-terminal-exec \
-    imageglass \
-    evince
+    loupe \
+    evince \
+    calcure \
+    cifs-utils
 
 pacman -S brightnessctl networkmanager pipewire wireplumber pwvucontrol gnome-keyring
 
